@@ -20,6 +20,15 @@ wrangler pages deploy dist --project-name xiaosong-observatory --branch main
 
 本地完整预览用 `wrangler pages dev dist`；纯静态服务器不会执行 `/api/snapshot`。
 
+## 自定义域名的自动绑定路径
+
+无需依赖浏览器登录。Wrangler 的官方 `auth token --json` 支持把已有 OAuth 登录提供给脚本，并自动刷新过期凭据。必须在子进程内捕获输出，凭据只留在进程内，用于 api.cloudflare.com 官方接口；不得读取认证文件、直接打印认证输出、存盘或放进命令参数。
+
+先 GET `/accounts/{account_id}/pages/projects/xiaosong-observatory/domains` 查重；缺失时 POST 同一路径，JSON 为 `{"name":"lab.mkongyue.top"}`。随后 GET `/accounts/{account_id}/pages/projects/xiaosong-observatory/domains/lab.mkongyue.top` 验证。初始化与证书 pending 期间等待，不重复创建。API 显示 active 后再读正式域名首页和 `/api/snapshot`。
+
+官方依据：[Wrangler 认证接口](https://developers.cloudflare.com/workers/wrangler/commands/general/#auth-token)、[Pages 自定义域名 API](https://developers.cloudflare.com/api/resources/pages/subresources/projects/subresources/domains/methods/create/)。Pages Write 权限已包含在现有正常登录中；没有 Pages 专用域名 CLI 命令不等于没有自动化路径。
+
+
 ## 数据更新与运营
 
 权威登记源：`data/registry.json`、`data/releases.json`；采集输出：`data/snapshot.json`。每日研发运营结束时，把上层 `operations/releases.json` 中已核验且可公开的记录同步到本仓库，并更新项目、推广讨论、跟进负责人/期限/状态/证据。先同步远端，保护自动采集历史与其他修改。
