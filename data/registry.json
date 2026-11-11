@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "account": "xudukongju",
+  "timezone": "Asia/Shanghai",
+  "projects": [{
+    "id": "skill-artifact-check",
+    "repo": "xudukongju/skill-artifact-check",
+    "title": "Skill Artifact Check",
+    "summary": "核对实际发布包和安装副本，发现旧文件、漏打包与内容漂移。",
+    "stage": "alpha",
+    "adoption": null,
+    "adoption_note": "尚无经确认的外部使用证据",
+    "discussions": [{"repo":"agentskills/agentskills","number":661,"channel":"Agent Skills · Show and tell"}]
+  }],
+  "followups": [{
+    "id": "first-release-feedback",
+    "project": "skill-artifact-check",
+    "title": "回访首发讨论与安装反馈",
+    "status": "todo",
+    "owner": "xudukongju / 运营助手",
+    "due": "2026-11-13",
+    "source": "https://github.com/agentskills/agentskills/discussions/661",
+    "note": "检查新增评论与安装问题；没有反馈时不重复发布广告。",
+    "updated_at": "2026-11-11T08:00:00Z"
+  }]
+}

@@ -1,0 +1,27 @@
+{
+  "timezone": "Asia/Shanghai",
+  "entries": [
+    {
+      "date": "2026-11-11",
+      "project": "skill-artifact-check",
+      "version": "0.1.0",
+      "status": "published",
+      "problem": "Skill 发布包或安装副本与实际修改的源目录不一致",
+      "new_explanation": "保存或更新成功提示不等于正确交付：需要核对实际产物字节，而不是只检查源目录或版本字符串。",
+      "repo": "https://github.com/xudukongju/skill-artifact-check",
+      "release": "https://github.com/xudukongju/skill-artifact-check/releases/tag/v0.1.0",
+      "ci": "https://github.com/xudukongju/skill-artifact-check/actions/runs/42980457555",
+      "evidence": "skill-artifact-check/docs/RESEARCH.md",
+      "acceptance": "35 tests × 6 OS/Python combinations; downloaded release wheel installation and parity/drift smoke checks passed",
+      "promotion": [
+        {
+          "url": "https://github.com/agentskills/agentskills/discussions/661",
+          "channel": "Agent Skills Show and tell",
+          "status": "published_verified"
+        }
+      ],
+      "external_adoption": null,
+      "follow_up": "检查新 Issues 与 Discussion 的真实反馈；不得重发相同介绍充当新成果。"
+    }
+  ]
+}

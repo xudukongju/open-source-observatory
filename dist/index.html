@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e36"><meta name="description" content="持续观察开源发布、真实反馈与下一步行动。"><title>开源观察台 · xudukongju</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<a class="skip" href="#main">跳至内容</a>
+<aside class="sidebar">
+<a class="brand" href="#overview"><span class="brand-icon" aria-hidden="true">◈</span><span>开源观察台<small>BUILD · LISTEN · IMPROVE</small></span></a>
+<div class="workspace"><span class="avatar">X</span><div>xudukongju<small>独立开源实验室</small></div><span class="dot"></span></div>
+<nav aria-label="主要导航"><a href="#overview" data-view="overview" aria-current="page"><span>◫</span>总览</a><a href="#releases" data-view="releases"><span>↗</span>发布档案<i id="nav-releases">—</i></a><a href="#feedback" data-view="feedback"><span>☷</span>反馈与跟进<i id="nav-feedback">—</i></a></nav>
+<div class="sidebar-note"><span class="eyebrow">我们的原则</span><p>有用，比热闹重要。</p><small>解决真实问题。<br>留下证据，持续跟进。</small></div>
+<a class="account-link" href="https://github.com/xudukongju" target="_blank" rel="noopener noreferrer">GitHub 主页 <span>↗</span></a>
+</aside>
+<div class="shell"><header class="topbar"><span>实验室 <span class="slash">/</span> <b id="breadcrumb">总览</b></span><div class="header-actions"><span class="live-label"><span class="dot"></span>云端采集</span><button id="sources-button" class="plain">数据说明</button><button id="refresh" class="button light">↻ <span>刷新数据</span></button></div></header>
+<main id="main" tabindex="-1">
+<section class="intro"><div><span class="eyebrow">THE OPEN-SOURCE OBSERVATORY</span><h1 id="page-title">让每一次发布，<br class="mobile-break">都有下文。</h1><p id="page-description">从解决一个问题，到听见真实反馈。这里记录完整的过程。</p></div><div class="intro-side"><span id="today"></span><strong>持续建设中 <span class="tiny-orbit">↗</span></strong></div></section>
+<div id="sync-status" class="sync-status" role="status" aria-live="polite">正在读取项目记录…</div>
+<div class="filter-bar"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索项目、发布或反馈" aria-label="搜索项目、发布或反馈"></label><label class="project-filter">项目 <select id="project"><option value="all">全部项目</option></select></label><button id="export" class="plain">导出数据 ↓</button></div>
+<section id="overview-view">
+<div id="metrics" class="metrics"></div>
+<div class="overview-grid"><section class="panel chart-panel"><div class="section-heading"><div><span class="eyebrow">ATTENTION OVER TIME</span><h2>被看见的轨迹</h2></div><select id="chart-project" aria-label="星标趋势项目"></select></div><div id="chart"></div><div class="chart-footer"><span><span class="legend-line"></span>GitHub Stars · 实测快照</span><span>最近 90 天</span></div></section><section class="panel next-panel"><div class="section-heading"><div><span class="eyebrow">NEXT ACTIONS</span><h2>下一步，有人接住</h2></div><a href="#feedback" class="small-link">全部 ↗</a></div><div id="next-actions"></div></section></div>
+<section class="section"><div class="section-heading"><div><span class="eyebrow">PROJECTS IN THE OPEN</span><h2>正在维护的项目</h2></div><span id="project-count" class="muted"></span></div><div id="projects"></div></section>
+<section class="section"><div class="section-heading"><div><span class="eyebrow">LATEST SHIP</span><h2>最近一次交付</h2></div><a href="#releases" class="small-link">查看发布档案 ↗</a></div><div id="latest-release"></div></section>
+</section>
+<section id="releases-view" hidden><div class="section-heading"><h2>每次发布，解释一个新问题</h2><span id="release-count" class="muted"></span></div><div id="releases"></div></section>
+<section id="feedback-view" hidden><div class="section-heading"><div><h2>跟进事项</h2><p class="muted">明确下一步、负责人和时间；完成状态由运营记录维护。</p></div><a href="https://github.com/xudukongju/open-source-observatory/edit/main/data/registry.json" target="_blank" rel="noopener noreferrer" class="small-link">管理跟进 ↗</a></div><div id="followups"></div><div class="section-heading feedback-heading"><div><h2>真实反馈</h2><p class="muted">GitHub Issues 与已登记推广讨论。自动回复状态是线索，关闭不等于问题已解决。</p></div><select id="feedback-filter" aria-label="反馈状态"><option value="all">全部反馈</option><option value="needs_reply">待回复</option><option value="replied">已回复</option><option value="closed">已关闭</option></select></div><div id="feedback"></div><div class="section-heading feedback-heading"><h2>推广记录与回声</h2></div><div id="promotions"></div></section>
+<footer><span>不是发布完就结束。<b>持续观察，认真回应。</b></span><span>数据源：GitHub · <button class="plain" id="footer-sources">查看采集状态 ↗</button></span></footer>
+</main></div>
+<dialog id="source-dialog"><div class="dialog-heading"><h2>数据从哪里来</h2><button id="close-dialog" aria-label="关闭数据说明" class="plain">✕</button></div><p>云端工作流计划每 15 分钟采集，GitHub 调度可能延迟；页面可见时每 60 秒检查新快照。刷新按钮只读取已采集数据，不触发新的 GitHub 采集。</p><p>星标不等于使用；发行资产下载包含重复及作者测试，不能计算真实用户数。讨论点赞可能包含作者本人。未确认的外部采用显示“未确认”。</p><div id="source-details"></div><div class="dialog-links"><a href="https://github.com/xudukongju/open-source-observatory/actions/workflows/collect.yml" target="_blank" rel="noopener noreferrer">云端采集记录 ↗</a><a href="https://github.com/xudukongju/open-source-observatory/blob/main/data/snapshot.json" target="_blank" rel="noopener noreferrer">原始快照 ↗</a></div></dialog>
+<script type="module" src="/app.js"></script>
+</body></html>
