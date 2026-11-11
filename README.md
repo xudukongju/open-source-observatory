@@ -4,7 +4,7 @@
 
 ## 数据流
 
-`data/registry.json`（项目与跟进）+ `data/releases.json`（发布账本）→ GitHub Actions 每 15 分钟采集 → `data/snapshot.json`（公开快照与 90 天历史）→ 网站每 60 秒读取新快照。
+`data/registry.json`（项目与跟进）+ `data/releases.json`（发布账本）→ GitHub Actions 每 15 分钟采集 → `data/snapshot.json`（公开快照与 90 天历史）→ Cloudflare Pages 同源接口 → 网站每 60 秒读取新快照。
 
 计划在每小时 07 / 22 / 37 / 52 分运行。GitHub 调度是尽力而为，可能延迟或丢弃任务；网页超过 45 分钟未见新快照会提示过期。公开仓库 60 天无活动可能停用定时工作流，需检查 Actions。无付费服务或长驻本机进程。
 
@@ -30,9 +30,9 @@ Node 18+、Python 3.7+、官方 GitHub CLI。登录沿用 `gh auth login`，不�
 ```sh
 npm test
 python3 scripts/collect.py
-npm run preview
+wrangler pages dev dist
 ```
 
 非默认 CLI 路径可通过 `GH_BIN` 指向已安装的官方 gh。`dist/snapshot.json` 是随站发布的初始兜底，页面会明确标为旧记录；正常数据来自 main 分支的公开快照。
 
-网页为无依赖静态页面。Sites 生产发布说明与维护入口见 `MAINTENANCE.md`。
+网站托管在账号所有者的 Cloudflare Pages（xiaosong-observatory），页面与 /api/snapshot 均无需 ChatGPT 登录。访客不必直连 GitHub raw；Pages Function 在云端读取公开快照并缓存60秒。生产发布说明与维护入口见 `MAINTENANCE.md`。

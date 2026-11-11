@@ -1,17 +1,35 @@
-# 观察台维护
+# 开源观察台维护
 
-源站 Sites ID: appgprj_6af420d9b84081919b4ebfe58647f8bd。站点默认 owner-private，未获用户明确请求不得改共享范围。目标域名 lab.mkongyue.top，连接状态以交付记录为准。
+## 唯一生产部署入口
 
-公开源代码与数据仓库：xudukongju/open-source-observatory。不要把候选的未证实需求、私密运营记录或凭据写进公开文件。
+用户明确指定沿用个人网站的托管方式：**自己的 Cloudflare Pages → 阿里云 DNS → lab.mkongyue.top**。不要使用内置 Sites，不添加 ChatGPT 登录门禁。
 
-数据权威源：data/registry.json、data/releases.json；采集器输出 data/snapshot.json。工作区上层 operations/releases.json 是每日发布账本，运营轮次结束时同步其中已核验的公开发布记录到此仓库，再触发云端采集并读回。不要用本地旧快照覆盖云端已有历史，编辑前 fetch/pull 当前 main，检查现有修改和正在运行的 Actions。
+- Cloudflare Pages 项目：`xiaosong-observatory`，生产分支 `main`。
+- 原生地址：https://xiaosong-observatory.pages.dev
+- 个人域名：https://lab.mkongyue.top（迁移验收状态见上层 PROJECT_STATUS.md）。
+- 阿里云 DNS：主机 `lab`，类型 `CNAME`，值 `xiaosong-observatory.pages.dev`。Pages 中也需绑定该自定义域名。
+- 公开源码和数据仓库：`xudukongju/open-source-observatory`。只发布可公开的材料。
 
-每日09:00运营任务负责内容研究、产品交付和跟进状态更新；每15分钟GitHub Actions仅采集指标与反馈，无需电脑开机。两者不可混为一谈。采集使用 GITHUB_TOKEN 的公开 API 读取与当前仓库 contents:write，不保存个人 token。GitHub 调度不能保证准点，检查 stale 提示和工作流运行结果。
+普通代码发布：先 `npm test`，再使用已有的官方 Wrangler 登录部署，不读取凭据文件，不打印 Token：
 
-Sites 发布只在界面或代码变更时需要。使用 Sites skill 的 source helper 将准确源版本推入 Sites 仓库，打包 dist 并发布；沿用 .openai/hosting.json。GitHub remote 和 Sites remote 不要互相替换。静态页面在源站私有，公开 GitHub 数据本身是公开信息。
+```sh
+wrangler pages deploy dist --project-name xiaosong-observatory --branch main
+```
 
-验收：npm test；读取真实云端快照；测试总览/发布/反馈导航、项目筛选、搜索、刷新、数据说明与导出；检查桌面和移动布局、失败保留快照、过期标记、数字0与未知的区别。新功能不能将脚本成功返回等同真实外部采用。
+本机可复用 `../../简历/job-workbench/node_modules/.bin/wrangler`。部署目录为本仓库；`functions/api/snapshot.js` 会一起发布。读取正式域名首页和 `/api/snapshot` 确认实际响应与采集时间。不要发布到 portfolio、radar 或 worlddesk 项目。
 
-## 已验证部署记录（2026-11-11）
+本地完整预览用 `wrangler pages dev dist`；纯静态服务器不会执行 `/api/snapshot`。
 
-源站 https://xudukongju-observatory.ruby-shrew-7478.chatgpt.site 已部署，保持 owner-private。首次云端采集运行 https://github.com/xudukongju/open-source-observatory/actions/runs/42985253104 成功，包含仓库、发行下载、Issues、Agent Skills Discussion 661 的实际结果。Cloudflare 自定义域名已登记，DNS 完成后用 Sites refresh_custom_domain_status 验证，绑定 ID 为 appgdom_6af4236974188191ac238c42158488bd；不得将 pending 当作上线。
+## 数据更新与运营
+
+权威登记源：`data/registry.json`、`data/releases.json`；采集输出：`data/snapshot.json`。每日研发运营结束时，把上层 `operations/releases.json` 中已核验且可公开的记录同步到本仓库，并更新项目、推广讨论、跟进负责人/期限/状态/证据。先同步远端，保护自动采集历史与其他修改。
+
+GitHub Actions 计划每15分钟采集公开仓库、发行资产、Issues 和登记的 Discussion；调度可能延迟。Pages 同源接口从公开仓库读取快照，边缘缓存60秒；网页可见时每60秒检查。数据更新时间是上游真实采集时间，超过45分钟提示过期。数据更新无需重新部署页面，也不依赖本机。
+
+每日09:00研发运营任务仍依赖本机，并负责需求判断、真实交付、回复反馈和人工跟进状态；指标自动采集不等于反馈已处理。下载含作者测试，外部采用无证据时保持未知。
+
+验收重点：总览/发布/反馈导航，搜索和项目筛选，数据来源弹窗，发布验收展开，数据导出；0与未知、来源失败和陈旧快照不可混淆。现有云端采集首次运行 42985253104 已成功。
+
+## 迁移与恢复
+
+旧内置 Sites 只保留为迁移前历史，不再部署、不再作为正式入口。旧 Sites 检出在上层 observatory-site-source，禁止与本仓库 Git 历史混合。切换自定义域名之前先验证 Pages 原生地址。若 Pages 自定义域名尚未生效，使用原生地址访问；不要把 DNS 已更改等同迁移已完成。

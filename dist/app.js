@@ -1,5 +1,5 @@
 import {states,sources,feedback,total,downloads,freshness,matches,escapeHtml as e,safeUrl,validate} from './model.js';
-const endpoint='https://raw.githubusercontent.com/xudukongju/open-source-observatory/main/data/snapshot.json';
+const endpoint='/api/snapshot';
 const $=id=>document.getElementById(id), num=x=>x==null?'—':new Intl.NumberFormat('zh-CN').format(x);
 const date=(s,full=false)=>s?new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',...(full?{year:'numeric',hour:'2-digit',minute:'2-digit'}:{})}).format(new Date(s)):'尚无成功采集';
 const link=(url,text,cls='')=>`<a class="${cls}" href="${e(safeUrl(url))}" target="_blank" rel="noopener noreferrer">${e(text)} ↗</a>`;
