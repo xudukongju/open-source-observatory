@@ -6,7 +6,7 @@
 
 - Cloudflare Pages 项目：`xiaosong-observatory`，生产分支 `main`。
 - 原生地址：https://xiaosong-observatory.pages.dev
-- 个人域名：https://lab.mkongyue.top（迁移验收状态见上层 PROJECT_STATUS.md）。
+- 正式域名：https://lab.mkongyue.top 。2026-11-11 已核验域名与证书 active，首页和 /api/snapshot 均200，无登录门禁。
 - 阿里云 DNS：主机 `lab`，类型 `CNAME`，值 `xiaosong-observatory.pages.dev`。Pages 中也需绑定该自定义域名。
 - 公开源码和数据仓库：`xudukongju/open-source-observatory`。只发布可公开的材料。
 
