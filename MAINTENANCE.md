@@ -11,3 +11,7 @@
 Sites 发布只在界面或代码变更时需要。使用 Sites skill 的 source helper 将准确源版本推入 Sites 仓库，打包 dist 并发布；沿用 .openai/hosting.json。GitHub remote 和 Sites remote 不要互相替换。静态页面在源站私有，公开 GitHub 数据本身是公开信息。
 
 验收：npm test；读取真实云端快照；测试总览/发布/反馈导航、项目筛选、搜索、刷新、数据说明与导出；检查桌面和移动布局、失败保留快照、过期标记、数字0与未知的区别。新功能不能将脚本成功返回等同真实外部采用。
+
+## 已验证部署记录（2026-11-11）
+
+源站 https://xudukongju-observatory.ruby-shrew-7478.chatgpt.site 已部署，保持 owner-private。首次云端采集运行 https://github.com/xudukongju/open-source-observatory/actions/runs/42985253104 成功，包含仓库、发行下载、Issues、Agent Skills Discussion 661 的实际结果。Cloudflare 自定义域名已登记，DNS 完成后用 Sites refresh_custom_domain_status 验证，绑定 ID 为 appgdom_6af4236974188191ac238c42158488bd；不得将 pending 当作上线。
