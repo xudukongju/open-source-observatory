@@ -6,7 +6,7 @@
 
 `data/registry.json`（项目与跟进）+ `data/releases.json`（发布账本）→ Cloudflare Cron 每15分钟采集 → KV 快照 → Pages 同源接口 → 网站每60秒读取。GitHub Actions 保留为归档与备用采集，合并90天历史。
 
-Cloudflare 新链路已部署，独立只读凭据配置与真实定时验收进行中。网页选择 KV 与 GitHub 中实际时间较新的快照；超过45分钟仍提示过期。GitHub 旧调度实测出现数小时触发间隔，因此不再把其15分钟配置等同可靠更新承诺。
+Cloudflare 新链路已在2026-11-12连续两次真实定时运行成功，独立只读凭据可读取全部登记来源。网页选择 KV 与 GitHub 中实际时间较新的快照；超过45分钟仍提示过期。GitHub 旧调度实测出现数小时触发间隔，因此不再把其15分钟配置等同可靠更新承诺。
 
 - 星标、fork 和发行资产下载来自 GitHub REST API。
 - 已登记的推广讨论及其分页评论、回复来自 GraphQL。

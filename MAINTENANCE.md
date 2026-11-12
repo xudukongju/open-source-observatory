@@ -33,7 +33,7 @@ wrangler pages deploy dist --project-name xiaosong-observatory --branch main
 
 权威登记源：`data/registry.json`、`data/releases.json`；采集输出：`data/snapshot.json`。每日研发运营结束时，把上层 `operations/releases.json` 中已核验且可公开的记录同步到本仓库，并更新项目、推广讨论、跟进负责人/期限/状态/证据。先同步远端，保护自动采集历史与其他修改。
 
-Cloudflare Worker `xiaosong-observatory-collector` 已部署每15分钟 Cron（UTC */15）。专用 KV `OBSERVATORY` 保存快照与健康状态；只读 GitHub Secret 名为 `GITHUB_READ_TOKEN`。正在完成独立只读凭据配置与真实定时采集验收，尚不据此宣称调度修复完成。
+Cloudflare Worker `xiaosong-observatory-collector` 已部署每15分钟 Cron（UTC */15）。专用 KV `OBSERVATORY` 保存快照与健康状态；只读 GitHub Secret 名为 `GITHUB_READ_TOKEN`。独立只读凭据已验证可读取四类 GitHub 来源。2026-11-12 07:00:21Z 与07:15:21Z两次真实 Cron 均成功，间隔15分钟；正式站已消费 KV 快照。
 
 Pages 同源接口从 KV 和 GitHub 归档选择实际采集时间较新的有效快照，边缘缓存60秒；网页可见时每60秒检查。GitHub Actions 原计划保留，优先归档新鲜且匹配当前登记表的 Cloudflare 快照，否则运行原采集器。两条路径合并历史，保留90天；失败不伪造新成功时间。超过45分钟提示过期。普通登记更新无需重新部署，也不依赖本机。
 
@@ -55,3 +55,13 @@ Pages 同源接口从 KV 和 GitHub 归档选择实际采集时间较新的有�
 - 缺失凭据时 health 为 awaiting_authorization；GitHub 某来源失败为 partial_failure，保留其旧值与时间；其他采集错误为 failed。先核对 health 与来源失败，再修授权/网络/查询，不能只重置时间。
 - 验收必须有真实 Cron 的 scheduled_at 与 snapshot_at、完整四类来源结果、网站同源 API 读回；手工触发不算定时验收。
 - 恢复：保留 GitHub Actions 备用采集，Pages 自动选用有效较新快照。暂停 Worker 前先确认归档与回退可用；不能删除 KV 历史。
+
+### 2026-11-12 调度修复证据
+
+原 GitHub schedule 两次触发相隔数小时，启动后仅十几秒完成，问题在触发频率。新 Worker 使用独立只读凭据；两次真实 Cron 的 `source_failures` 均为0，原历史与新观测在 KV 合并。不要据此承诺未来绝不延迟，仍以45分钟陈旧提示和 `/health` 为准。
+
+实现中修复了 Worker 不支持 `redirect: error` 的运行时错误：使用 `manual` 并拒绝非2xx响应，认证头仍只发送到固定 GitHub API，不跟随重定向。模块入口仅导出 default handler。
+
+归档请求使用真实项目 User-Agent；默认 Python 客户端曾被 workers.dev 返回1010，未改变安全规则或伪装浏览器。GitHub 归档必须保留 Cloudflare 原始 `generated_at`，不能把备用采集成功当作归档验收。
+
+归档验收：Actions [43174149534](https://github.com/xudukongju/open-source-observatory/actions/runs/43174149534) 成功；main 实际保存 `2026-11-12T07:15:21.845Z`、`collector: cloudflare-cron` 与11个历史点。32项现有模型/API/采集/归档测试通过。
