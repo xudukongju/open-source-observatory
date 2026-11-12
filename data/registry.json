@@ -18,6 +18,16 @@
           "channel": "Agent Skills · Show and tell"
         }
       ]
+    },
+    {
+      "id": "calendar-occurrence-audit",
+      "repo": "xudukongju/calendar-occurrence-audit",
+      "title": "Calendar Occurrence Audit",
+      "summary": "离线展开重复日程，核对交接前后具体日程实例与真实时刻。",
+      "stage": "alpha",
+      "adoption": null,
+      "adoption_note": "未确认外部采用；作者发行包验证下载不计用户",
+      "discussions": []
     }
   ],
   "followups": [
@@ -42,6 +52,17 @@
       "source": "https://github.com/xudukongju/open-source-observatory/actions/runs/43174149534",
       "note": "已迁移到 Cloudflare Cron + 独立只读凭据。11-12 07:00:21Z 与07:15:21Z连续两次真实定时成功，四类来源均成功；正式站读到 KV 快照。GitHub 归档 CI 43174149534成功，保存07:15:21.845Z原始时间与11个历史点。保留旧采集回退和45分钟陈旧提醒，后续监测由每日运营承担。",
       "updated_at": "2026-11-12T07:18:47.538248Z"
+    },
+    {
+      "id": "calendar-first-feedback",
+      "project": "calendar-occurrence-audit",
+      "title": "核验首次安装反馈与上游稳定依赖",
+      "status": "pending",
+      "owner": "运营助手",
+      "due": "2026-11-13",
+      "source": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.1.0a1",
+      "note": "发行包已实际下载安装，31项测试通过；后续检查新 Issues 和上游包含 THISANDFUTURE 修复的稳定版本，实际采用未知。",
+      "updated_at": "2026-11-12T09:03:06.008173+00:00"
     }
   ]
 }

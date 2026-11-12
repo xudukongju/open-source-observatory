@@ -22,6 +22,28 @@
       ],
       "external_adoption": null,
       "follow_up": "检查新 Issues 与 Discussion 的真实反馈；不得重发相同介绍充当新成果。"
+    },
+    {
+      "date": "2026-11-12",
+      "project": "calendar-occurrence-audit",
+      "version": "0.1.0a1",
+      "status": "published",
+      "problem": "日历导入条数或事件记录相同，不能证明重复日程的具体实例和时刻保持一致",
+      "new_explanation": "字段 diff 已有成熟工具；增量是把规则变化展开为窗口内具体日程后果，并拒绝未知时区造成的假相等。使用成熟展开库，不重写 RRULE。",
+      "repo": "https://github.com/xudukongju/calendar-occurrence-audit",
+      "release": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.1.0a1",
+      "ci": "https://github.com/xudukongju/calendar-occurrence-audit/actions/runs/43187495049",
+      "evidence": "https://github.com/xudukongju/calendar-occurrence-audit/blob/v0.1.0a1/docs/RESEARCH.md",
+      "acceptance": "31 tests × Linux/macOS/Windows × Python 3.10/3.12; actual downloaded wheel independently installed and all 31 tests + console entry passed",
+      "promotion": [
+        {
+          "url": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.1.0a1",
+          "channel": "GitHub Release · 自有发布说明",
+          "status": "published_verified"
+        }
+      ],
+      "external_adoption": null,
+      "follow_up": "检查首次安装反馈、固定上游依赖发布状态及真实任务采用；不把作者下载计作用户。"
     }
   ]
 }
