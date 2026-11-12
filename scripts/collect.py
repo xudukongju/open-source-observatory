@@ -10,6 +10,7 @@ import json
 import os
 import pathlib
 import subprocess
+import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 GH = os.environ.get('GH_BIN', 'gh')
@@ -128,11 +129,50 @@ def releases(repo):
             for r in pages('repos/' + repo + '/releases') if not r['draft']]
 
 
-def collect(root=ROOT):
+def merge_history(*histories):
+    rows = {(h['project'], h['at']): h for history in histories for h in history}
+    return sorted(rows.values(), key=lambda h: h['at'])
+
+
+def cloud_snapshot(url):
+    if url != 'https://xiaosong-observatory-collector.xudukongju.workers.dev/snapshot':
+        raise ValueError('Unexpected collector URL')
+    with urllib.request.urlopen(url, timeout=20) as response:
+        data = json.load(response)
+    if (data.get('schema') != 1 or data.get('collector') != 'cloudflare-cron'
+            or not all(isinstance(data.get(k), list) for k in ('projects', 'history', 'releases', 'followups'))):
+        raise ValueError('Invalid cloud snapshot')
+    dt.datetime.fromisoformat(data['generated_at'].replace('Z', '+00:00'))
+    return data
+
+
+def source_failures(data):
+    return sum(not s['ok'] for p in data['projects'] for s in [p['metrics'], p['releases'], p['issues']] + p['promotions'])
+
+
+def collect(root=ROOT, cloud_url=None):
     registry = json.loads((root / 'data/registry.json').read_text())
     ledger = json.loads((root / 'data/releases.json').read_text())
     path = root / 'data/snapshot.json'
     old = json.loads(path.read_text()) if path.exists() else {}
+    if cloud_url:
+        try:
+            cloud = cloud_snapshot(cloud_url)
+            cloud['history'] = merge_history(old.get('history', []), cloud['history'])
+            age = dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(cloud['generated_at'].replace('Z', '+00:00'))
+            configs = [{k: v for k, v in p.items() if k not in ('metrics', 'releases', 'issues', 'promotions')} for p in cloud['projects']]
+            if (dt.timedelta(0) <= age <= dt.timedelta(minutes=45)
+                    and configs == registry['projects'] and cloud['releases'] == ledger['entries']
+                    and cloud['followups'] == registry.get('followups', [])
+                    and cloud['generated_at'] >= old.get('generated_at', '')):
+                cutoff = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=90)).isoformat().replace('+00:00', 'Z')
+                cloud['history'] = [h for h in cloud['history'] if h['at'] >= cutoff]
+                path.write_text(json.dumps(cloud, ensure_ascii=False, indent=2) + '\n')
+                print('Archived actual Cloudflare observation: ' + cloud['generated_at'])
+                return source_failures(cloud)
+            old['history'] = cloud['history']
+        except Exception:
+            print('Cloud snapshot unavailable; using GitHub collector fallback')
     checked = now()
     prev = {p['id']: p for p in old.get('projects', [])}
     projects = []
@@ -161,12 +201,12 @@ def collect(root=ROOT):
               'collection_interval_minutes': 15, 'projects': projects, 'releases': ledger['entries'],
               'followups': registry.get('followups', []), 'history': history}
     path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
-    errors = sum(not s['ok'] for p in projects for s in [p['metrics'], p['releases'], p['issues']] + p['promotions'])
+    errors = source_failures(result)
     print('Snapshot: %d project(s), %d source failure(s)' % (len(projects), errors))
     return errors
 
 
 if __name__ == '__main__':
-    failures = collect()
+    failures = collect(cloud_url=os.environ.get('CLOUD_SNAPSHOT_URL'))
     # Snapshot is still committed by workflow (partial failure evidence matters).
     raise SystemExit(1 if failures else 0)

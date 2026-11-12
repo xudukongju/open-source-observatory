@@ -16,3 +16,10 @@ test('cache lookup strips visitor parameters; cache hits do not refetch',async()
  globalThis.caches={default:{match:async key=>{assert.equal(key.url,'https://example.com/api/snapshot');return Response.json(data)},put:()=>{throw Error('unexpected')}}};
  try{const r=await onRequestGet({request:new Request('https://example.com/api/snapshot?url=https://private.example'),waitUntil:()=>{throw Error('unexpected')}});assert.deepEqual(await r.json(),data)}finally{globalThis.caches=before}
 });
+test('KV and GitHub select newest actual observation; outages retain original time',async()=>{
+ const fresh={...data,generated_at:'2026-11-12T04:00:00Z'};
+ for(const [cloud,git,expected] of [[fresh,data,fresh],[data,fresh,fresh],[fresh,null,fresh],[null,data,data]]){
+  const r=await readSnapshot(async()=>{if(!git)throw Error('offline');return Response.json(git)},{get:async()=>cloud});
+  assert.deepEqual(await r.json(),expected);
+ }
+});

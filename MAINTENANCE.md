@@ -33,7 +33,9 @@ wrangler pages deploy dist --project-name xiaosong-observatory --branch main
 
 权威登记源：`data/registry.json`、`data/releases.json`；采集输出：`data/snapshot.json`。每日研发运营结束时，把上层 `operations/releases.json` 中已核验且可公开的记录同步到本仓库，并更新项目、推广讨论、跟进负责人/期限/状态/证据。先同步远端，保护自动采集历史与其他修改。
 
-GitHub Actions 计划每15分钟采集公开仓库、发行资产、Issues 和登记的 Discussion；调度可能延迟。Pages 同源接口从公开仓库读取快照，边缘缓存60秒；网页可见时每60秒检查。数据更新时间是上游真实采集时间，超过45分钟提示过期。数据更新无需重新部署页面，也不依赖本机。
+Cloudflare Worker `xiaosong-observatory-collector` 已部署每15分钟 Cron（UTC */15）。专用 KV `OBSERVATORY` 保存快照与健康状态；只读 GitHub Secret 名为 `GITHUB_READ_TOKEN`。正在完成独立只读凭据配置与真实定时采集验收，尚不据此宣称调度修复完成。
+
+Pages 同源接口从 KV 和 GitHub 归档选择实际采集时间较新的有效快照，边缘缓存60秒；网页可见时每60秒检查。GitHub Actions 原计划保留，优先归档新鲜且匹配当前登记表的 Cloudflare 快照，否则运行原采集器。两条路径合并历史，保留90天；失败不伪造新成功时间。超过45分钟提示过期。普通登记更新无需重新部署，也不依赖本机。
 
 每日09:00研发运营任务仍依赖本机，并负责需求判断、真实交付、回复反馈和人工跟进状态；指标自动采集不等于反馈已处理。下载含作者测试，外部采用无证据时保持未知。
 
@@ -42,3 +44,14 @@ GitHub Actions 计划每15分钟采集公开仓库、发行资产、Issues 和�
 ## 迁移与恢复
 
 旧内置 Sites 只保留为迁移前历史，不再部署、不再作为正式入口。旧 Sites 检出在上层 observatory-site-source，禁止与本仓库 Git 历史混合。切换自定义域名之前先验证 Pages 原生地址。若 Pages 自定义域名尚未生效，使用原生地址访问；不要把 DNS 已更改等同迁移已完成。
+
+## Cloudflare 定时采集的维护入口
+
+- 配置：`worker/wrangler.toml`；部署：`wrangler deploy --config worker/wrangler.toml`。不会要求修改 DNS。
+- 健康：https://xiaosong-observatory-collector.xudukongju.workers.dev/health
+- 实际公开快照：https://xiaosong-observatory-collector.xudukongju.workers.dev/snapshot
+- KV ID：`2627d4f1d95c4dd2b629740225d19d57`，只供本观察台使用，Pages 与 Worker 共享 binding。
+- GitHub 使用独立 fine-grained PAT，仅 Public repositories、无额外写权限；90天到期。只在官方 GitHub 页面创建，在 Cloudflare Secret 中保存。不能把本机可写 gh 登录复制到云端。
+- 缺失凭据时 health 为 awaiting_authorization；GitHub 某来源失败为 partial_failure，保留其旧值与时间；其他采集错误为 failed。先核对 health 与来源失败，再修授权/网络/查询，不能只重置时间。
+- 验收必须有真实 Cron 的 scheduled_at 与 snapshot_at、完整四类来源结果、网站同源 API 读回；手工触发不算定时验收。
+- 恢复：保留 GitHub Actions 备用采集，Pages 自动选用有效较新快照。暂停 Worker 前先确认归档与回退可用；不能删除 KV 历史。

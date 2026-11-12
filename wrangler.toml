@@ -1,3 +1,7 @@
 name = "xiaosong-observatory"
 pages_build_output_dir = "./dist"
 compatibility_date = "2026-11-01"
+
+[[kv_namespaces]]
+binding = "OBSERVATORY"
+id = "2627d4f1d95c4dd2b629740225d19d57"
