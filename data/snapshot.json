@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-12T07:18:59.884821Z",
+  "generated_at": "2026-11-12T09:05:05.632628Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
@@ -22,8 +22,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-12T07:18:59.884821Z",
-        "observed_at": "2026-11-12T07:18:59.884821Z",
+        "checked_at": "2026-11-12T09:05:05.632628Z",
+        "observed_at": "2026-11-12T09:05:05.632628Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -35,8 +35,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-12T07:18:59.884821Z",
-        "observed_at": "2026-11-12T07:18:59.884821Z",
+        "checked_at": "2026-11-12T09:05:05.632628Z",
+        "observed_at": "2026-11-12T09:05:05.632628Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -59,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-12T07:18:59.884821Z",
-        "observed_at": "2026-11-12T07:18:59.884821Z",
+        "checked_at": "2026-11-12T09:05:05.632628Z",
+        "observed_at": "2026-11-12T09:05:05.632628Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-12T07:18:59.884821Z",
-          "observed_at": "2026-11-12T07:18:59.884821Z",
+          "checked_at": "2026-11-12T09:05:05.632628Z",
+          "observed_at": "2026-11-12T09:05:05.632628Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -82,6 +82,61 @@
           "key": "agentskills/agentskills#661"
         }
       ]
+    },
+    {
+      "id": "calendar-occurrence-audit",
+      "repo": "xudukongju/calendar-occurrence-audit",
+      "title": "Calendar Occurrence Audit",
+      "summary": "离线展开重复日程，核对交接前后具体日程实例与真实时刻。",
+      "stage": "alpha",
+      "adoption": null,
+      "adoption_note": "未确认外部采用；作者发行包验证下载不计用户",
+      "discussions": [],
+      "metrics": {
+        "ok": true,
+        "checked_at": "2026-11-12T09:05:05.632628Z",
+        "observed_at": "2026-11-12T09:05:05.632628Z",
+        "value": {
+          "stargazers_count": 0,
+          "forks_count": 0,
+          "subscribers_count": 0,
+          "pushed_at": "2026-11-12T08:59:28Z",
+          "archived": false
+        },
+        "error": null
+      },
+      "releases": {
+        "ok": true,
+        "checked_at": "2026-11-12T09:05:05.632628Z",
+        "observed_at": "2026-11-12T09:05:05.632628Z",
+        "value": [
+          {
+            "tag": "v0.1.0a1",
+            "url": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.1.0a1",
+            "published_at": "2026-11-12T09:01:12Z",
+            "prerelease": true,
+            "assets": [
+              {
+                "name": "calendar_occurrence_audit-0.1.0a1-py3-none-any.whl",
+                "downloads": 0
+              },
+              {
+                "name": "calendar_occurrence_audit-0.1.0a1.tar.gz",
+                "downloads": 0
+              }
+            ]
+          }
+        ],
+        "error": null
+      },
+      "issues": {
+        "ok": true,
+        "checked_at": "2026-11-12T09:05:05.632628Z",
+        "observed_at": "2026-11-12T09:05:05.632628Z",
+        "value": [],
+        "error": null
+      },
+      "promotions": []
     }
   ],
   "releases": [
@@ -106,6 +161,28 @@
       ],
       "external_adoption": null,
       "follow_up": "检查新 Issues 与 Discussion 的真实反馈；不得重发相同介绍充当新成果。"
+    },
+    {
+      "date": "2026-11-12",
+      "project": "calendar-occurrence-audit",
+      "version": "0.1.0a1",
+      "status": "published",
+      "problem": "日历导入条数或事件记录相同，不能证明重复日程的具体实例和时刻保持一致",
+      "new_explanation": "字段 diff 已有成熟工具；增量是把规则变化展开为窗口内具体日程后果，并拒绝未知时区造成的假相等。使用成熟展开库，不重写 RRULE。",
+      "repo": "https://github.com/xudukongju/calendar-occurrence-audit",
+      "release": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.1.0a1",
+      "ci": "https://github.com/xudukongju/calendar-occurrence-audit/actions/runs/43187495049",
+      "evidence": "https://github.com/xudukongju/calendar-occurrence-audit/blob/v0.1.0a1/docs/RESEARCH.md",
+      "acceptance": "31 tests × Linux/macOS/Windows × Python 3.10/3.12; actual downloaded wheel independently installed and all 31 tests + console entry passed",
+      "promotion": [
+        {
+          "url": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.1.0a1",
+          "channel": "GitHub Release · 自有发布说明",
+          "status": "published_verified"
+        }
+      ],
+      "external_adoption": null,
+      "follow_up": "检查首次安装反馈、固定上游依赖发布状态及真实任务采用；不把作者下载计作用户。"
     }
   ],
   "followups": [
@@ -130,6 +207,17 @@
       "source": "https://github.com/xudukongju/open-source-observatory/actions/runs/43174149534",
       "note": "已迁移到 Cloudflare Cron + 独立只读凭据。11-12 07:00:21Z 与07:15:21Z连续两次真实定时成功，四类来源均成功；正式站读到 KV 快照。GitHub 归档 CI 43174149534成功，保存07:15:21.845Z原始时间与11个历史点。保留旧采集回退和45分钟陈旧提醒，后续监测由每日运营承担。",
       "updated_at": "2026-11-12T07:18:47.538248Z"
+    },
+    {
+      "id": "calendar-first-feedback",
+      "project": "calendar-occurrence-audit",
+      "title": "核验首次安装反馈与上游稳定依赖",
+      "status": "pending",
+      "owner": "运营助手",
+      "due": "2026-11-13",
+      "source": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.1.0a1",
+      "note": "发行包已实际下载安装，31项测试通过；后续检查新 Issues 和上游包含 THISANDFUTURE 修复的稳定版本，实际采用未知。",
+      "updated_at": "2026-11-12T09:03:06.008173+00:00"
     }
   ],
   "history": [
@@ -202,6 +290,60 @@
     {
       "at": "2026-11-12T07:18:59.884821Z",
       "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T07:30:21.961Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T07:45:21.979Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T08:00:22.343Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T08:15:22.304Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T08:30:21.737Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T08:45:21.864Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T09:00:21.784Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T09:05:05.632628Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T09:05:05.632628Z",
+      "project": "calendar-occurrence-audit",
       "stars": 0,
       "forks": 0
     }
