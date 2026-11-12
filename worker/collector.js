@@ -5,11 +5,11 @@ const repoName = name => {
   if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(name)) throw Error('Invalid repository');
   return name;
 };
-export function githubClient(token, fetcher = fetch) {
+export function githubClient(token, fetcher = (...args) => fetch(...args)) {
   return async (path, query) => {
     if (path !== 'graphql' && !/^repos\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+(?:\/|\?|$)/.test(path)) throw Error('Invalid API path');
     const response = await fetcher('https://api.github.com/' + path, {
-      method: query ? 'POST' : 'GET', redirect: 'error',
+      method: query ? 'POST' : 'GET', redirect: 'manual',
       headers: {Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json',
         'User-Agent': 'xudukongju-observatory', ...(query ? {'Content-Type': 'application/json'} : {})},
       ...(query ? {body: JSON.stringify({query})} : {}), signal: AbortSignal.timeout(15000)
@@ -141,20 +141,37 @@ export function failures(data) {
   return data.projects.flatMap(p => [p.metrics,p.releases,p.issues,...p.promotions]).filter(s => !s.ok).length;
 }
 async function publicJSON(name, fetcher) {
-  const r = await fetcher(ROOT + name, {signal:AbortSignal.timeout(15000),redirect:'error',headers:{'Cache-Control':'no-cache'},cf:{cacheTtl:0}});
-  if (!r.ok) throw Error('Public configuration unavailable');
+  let r;
+  try {
+    r = await fetcher(ROOT + name, {signal:AbortSignal.timeout(15000),redirect:'manual',headers:{'Cache-Control':'no-cache'},cf:{cacheTtl:0}});
+  } catch (cause) {
+    const error = Error('Public configuration fetch failed');
+    error.publicCode = /illegal invocation|incorrect.*this/i.test(cause.message) ? 'config_fetch_context' : 'config_fetch_failed';
+    error.publicSource = name;
+    throw error;
+  }
+  if (!r.ok) {
+    const error = Error('Public configuration unavailable');
+    error.publicCode = 'config_http_' + r.status;
+    error.publicSource = name;
+    throw error;
+  }
   return r.json();
 }
-export async function scheduledRun(event, env, fetcher = fetch) {
+export async function scheduledRun(event, env, fetcher = (...args) => fetch(...args)) {
   const attempted = new Date().toISOString();
+  let stage = 'authorization';
   try {
     if (!env.GITHUB_READ_TOKEN) throw Error('missing_read_token');
+    stage = 'configuration';
     const [registry, ledger, archived, cached] = await Promise.all([
       publicJSON('registry.json',fetcher),publicJSON('releases.json',fetcher),
       publicJSON('snapshot.json',fetcher),env.OBSERVATORY.get('snapshot','json')]);
     const previous = cached && Date.parse(cached.generated_at) >= Date.parse(archived.generated_at) ? cached : archived;
     previous.history = mergeHistory(archived.history || [],cached?.history || []);
+    stage = 'collection';
     const snapshot = await collect(registry,ledger,previous,githubClient(env.GITHUB_READ_TOKEN,fetcher),attempted);
+    stage = 'persist_snapshot';
     await env.OBSERVATORY.put('snapshot',JSON.stringify(snapshot));
     const count = failures(snapshot);
     await env.OBSERVATORY.put('health',JSON.stringify({attempted_at:attempted,scheduled_at:new Date(event.scheduledTime).toISOString(),
@@ -162,7 +179,8 @@ export async function scheduledRun(event, env, fetcher = fetch) {
     if (count) throw Error('source_failure');
   } catch (err) {
     if (err.message !== 'source_failure') await env.OBSERVATORY.put('health',JSON.stringify({attempted_at:attempted,
-      status:err.message==='missing_read_token'?'awaiting_authorization':'failed',snapshot_retained:true}));
+      status:err.message==='missing_read_token'?'awaiting_authorization':'failed',snapshot_retained:true,stage,
+      ...(err.publicCode ? {code:err.publicCode,source:err.publicSource} : {})}));
     // Never log response bodies, request headers or arbitrary upstream errors.
     throw Error('Observatory scheduled collection failed; see public health status');
   }

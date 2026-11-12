@@ -41,7 +41,7 @@ test('GraphQL reads paginated replies and marks new external reply',async()=>{
  assert.equal(calls,2);assert.equal(result.comment_count,3);assert.equal(result.comments[0].state,'needs_reply');
 });
 test('credentials stay in fixed official API headers',async()=>{
- let calls=0;const client=githubClient('test-secret',async(url,opts)=>{calls++;assert.equal(url,'https://api.github.com/graphql');assert.equal(opts.headers.Authorization,'Bearer test-secret');assert.equal(opts.redirect,'error');return Response.json({data:{}})});
+ let calls=0;const client=githubClient('test-secret',async(url,opts)=>{calls++;assert.equal(url,'https://api.github.com/graphql');assert.equal(opts.headers.Authorization,'Bearer test-secret');assert.equal(opts.redirect,'manual');return Response.json({data:{}})});
  await client('graphql','query{viewer{login}}');await assert.rejects(()=>client('https://evil.test'),/path/);assert.equal(calls,1);
 });
 test('scheduled run publishes snapshot and health; no token exposed',async()=>{
@@ -71,4 +71,9 @@ test('real scheduled handler accepts Cloudflare ExecutionContext',async()=>{
  const original=globalThis.fetch;globalThis.fetch=fakeFetch;
  const env={OBSERVATORY:kv(),GITHUB_READ_TOKEN:'test-secret'};
  try{await handler.scheduled({scheduledTime:Date.now()},env,{waitUntil(){}});assert.equal((await env.OBSERVATORY.get('health')).status,'ok')}finally{globalThis.fetch=original}
+});
+
+test('redirect responses are rejected without forwarding credentials',async()=>{
+ let calls=0;const client=githubClient('test-secret',async(_url,opts)=>{calls++;assert.equal(opts.redirect,'manual');return new Response(null,{status:302,headers:{Location:'https://elsewhere.example'}})});
+ await assert.rejects(()=>client('repos/a/b'),/HTTP 302/);assert.equal(calls,1);
 });
