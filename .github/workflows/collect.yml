@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['data/registry.json', 'data/releases.json', 'scripts/collect.py', '.github/workflows/collect.yml']
+    paths: ['data/registry.json', 'data/releases.json', 'scripts/**', 'worker/**', 'functions/**', 'tests/**', 'dist/model.js', 'package.json', '.github/workflows/collect.yml']
 permissions:
   contents: write
 concurrency:
