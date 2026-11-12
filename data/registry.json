@@ -2,25 +2,46 @@
   "schema": 1,
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
-  "projects": [{
-    "id": "skill-artifact-check",
-    "repo": "xudukongju/skill-artifact-check",
-    "title": "Skill Artifact Check",
-    "summary": "核对实际发布包和安装副本，发现旧文件、漏打包与内容漂移。",
-    "stage": "alpha",
-    "adoption": null,
-    "adoption_note": "尚无经确认的外部使用证据",
-    "discussions": [{"repo":"agentskills/agentskills","number":661,"channel":"Agent Skills · Show and tell"}]
-  }],
-  "followups": [{
-    "id": "first-release-feedback",
-    "project": "skill-artifact-check",
-    "title": "回访首发讨论与安装反馈",
-    "status": "todo",
-    "owner": "xudukongju / 运营助手",
-    "due": "2026-11-13",
-    "source": "https://github.com/agentskills/agentskills/discussions/661",
-    "note": "检查新增评论与安装问题；没有反馈时不重复发布广告。",
-    "updated_at": "2026-11-11T08:00:00Z"
-  }]
+  "projects": [
+    {
+      "id": "skill-artifact-check",
+      "repo": "xudukongju/skill-artifact-check",
+      "title": "Skill Artifact Check",
+      "summary": "核对实际发布包和安装副本，发现旧文件、漏打包与内容漂移。",
+      "stage": "alpha",
+      "adoption": null,
+      "adoption_note": "尚无经确认的外部使用证据",
+      "discussions": [
+        {
+          "repo": "agentskills/agentskills",
+          "number": 661,
+          "channel": "Agent Skills · Show and tell"
+        }
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "id": "first-release-feedback",
+      "project": "skill-artifact-check",
+      "title": "回访首发讨论与安装反馈",
+      "status": "watching",
+      "owner": "xudukongju / 运营助手",
+      "due": "2026-11-13",
+      "source": "https://github.com/agentskills/agentskills/discussions/661",
+      "note": "2026-11-12 已核对项目 Issues 与首发讨论：没有新问题或评论，尚无外部采用证据。保留 11-13 回访，不重复发帖。",
+      "updated_at": "2026-11-12T01:04:07.794204Z"
+    },
+    {
+      "id": "collection-schedule-delay",
+      "project": "skill-artifact-check",
+      "title": "复核云端计划采集延迟",
+      "status": "todo",
+      "owner": "运营助手",
+      "due": "2026-11-13",
+      "source": "https://github.com/xudukongju/open-source-observatory/actions/runs/43114759797",
+      "note": "已配置每15分钟，实际两次 schedule 为 11-11 16:18Z 与 22:48Z，间隔约6.5小时；均成功且API与仓库一致。当前证据指向触发间隔而非采集失败；本轮登记更新触发刷新，不将恢复新快照称为定时稳定性已解决。",
+      "updated_at": "2026-11-12T01:04:07.794204Z"
+    }
+  ]
 }
