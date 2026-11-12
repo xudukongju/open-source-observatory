@@ -13,10 +13,23 @@ class ArchiveTests(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = pathlib.Path(self.tmp.name)
         (self.root / 'data').mkdir()
-        self.registry = json.loads((c.ROOT / 'data/registry.json').read_text())
-        self.ledger = json.loads((c.ROOT / 'data/releases.json').read_text())
-        self.cloud = json.loads((c.ROOT / 'data/snapshot.json').read_text())
-        self.cloud.update(collector='cloudflare-cron', generated_at=c.now(), followups=self.registry['followups'])
+        # Keep fixtures coherent and independent of live registry/snapshot timing.
+        # A newly registered project legitimately precedes its first cloud sample.
+        configs = [{'id': name, 'repo': 'example/' + name, 'discussions': []}
+                   for name in ('first', 'second')]
+        self.registry = {'schema': 1, 'account': 'example', 'timezone': 'UTC',
+                         'projects': configs, 'followups': [{'id': 'review', 'status': 'pending'}]}
+        self.ledger = {'entries': [{'project': 'first', 'version': '0.1'}]}
+        now = c.now()
+        good = {'ok': True, 'observed_at': now, 'checked_at': now, 'value': []}
+        projects = []
+        for config in configs:
+            projects.append(dict(config, metrics=dict(good, value={'stargazers_count': 1, 'forks_count': 0}),
+                                 releases=copy.deepcopy(good), issues=copy.deepcopy(good), promotions=[]))
+        self.cloud = {'schema': 1, 'collector': 'cloudflare-cron', 'generated_at': now,
+                      'projects': projects, 'releases': self.ledger['entries'],
+                      'followups': self.registry['followups'],
+                      'history': [{'project': 'first', 'at': now, 'stars': 1, 'forks': 0}]}
         for name, value in [('registry', self.registry), ('releases', self.ledger), ('snapshot', self.cloud)]:
             (self.root / ('data/' + name + '.json')).write_text(json.dumps(value))
     def tearDown(self):
