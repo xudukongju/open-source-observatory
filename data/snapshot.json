@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-12T03:26:33.731300Z",
+  "generated_at": "2026-11-12T06:39:29.555723Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
@@ -22,8 +22,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-12T03:26:33.731300Z",
-        "observed_at": "2026-11-12T03:26:33.731300Z",
+        "checked_at": "2026-11-12T06:39:29.555723Z",
+        "observed_at": "2026-11-12T06:39:29.555723Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -35,8 +35,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-12T03:26:33.731300Z",
-        "observed_at": "2026-11-12T03:26:33.731300Z",
+        "checked_at": "2026-11-12T06:39:29.555723Z",
+        "observed_at": "2026-11-12T06:39:29.555723Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -59,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-12T03:26:33.731300Z",
-        "observed_at": "2026-11-12T03:26:33.731300Z",
+        "checked_at": "2026-11-12T06:39:29.555723Z",
+        "observed_at": "2026-11-12T06:39:29.555723Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-12T03:26:33.731300Z",
-          "observed_at": "2026-11-12T03:26:33.731300Z",
+          "checked_at": "2026-11-12T06:39:29.555723Z",
+          "observed_at": "2026-11-12T06:39:29.555723Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -113,23 +113,23 @@
       "id": "first-release-feedback",
       "project": "skill-artifact-check",
       "title": "回访首发讨论与安装反馈",
-      "status": "watching",
+      "status": "done",
       "owner": "xudukongju / 运营助手",
-      "due": "2026-11-13",
+      "due": "2026-11-12",
       "source": "https://github.com/agentskills/agentskills/discussions/661",
-      "note": "2026-11-12 已核对项目 Issues 与首发讨论：没有新问题或评论，尚无外部采用证据。保留 11-13 回访，不重复发帖。",
-      "updated_at": "2026-11-12T01:04:07.794204Z"
+      "note": "2026-11-12 回访完成：项目 Issues 为0，首发讨论评论为0，最后活动为11-11 07:37Z。没有待答复问题，也没有外部采用证据；今后新反馈由每日运营继续监测，不把本次回访长期挂为未完成。",
+      "updated_at": "2026-11-12T06:37:39.476031Z"
     },
     {
       "id": "collection-schedule-delay",
       "project": "skill-artifact-check",
       "title": "复核云端计划采集延迟",
-      "status": "todo",
+      "status": "doing",
       "owner": "运营助手",
-      "due": "2026-11-13",
+      "due": "2026-11-12",
       "source": "https://github.com/xudukongju/open-source-observatory/actions/runs/43114759797",
-      "note": "已配置每15分钟，实际两次 schedule 为 11-11 16:18Z 与 22:48Z，间隔约6.5小时；均成功且API与仓库一致。当前证据指向触发间隔而非采集失败；本轮登记更新触发刷新，不将恢复新快照称为定时稳定性已解决。",
-      "updated_at": "2026-11-12T01:04:07.794204Z"
+      "note": "已定位为 GitHub 定时触发间隔而非执行慢。Cloudflare Cron Worker 与专用 KV 已部署；独立只读授权配置中，保留原链路。须核验真实 Cron、四类来源和网站读回后才完成。",
+      "updated_at": "2026-11-12T06:37:39.476031Z"
     }
   ],
   "history": [
@@ -171,6 +171,12 @@
     },
     {
       "at": "2026-11-12T03:26:33.731300Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T06:39:29.555723Z",
       "project": "skill-artifact-check",
       "stars": 0,
       "forks": 0
