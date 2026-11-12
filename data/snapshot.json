@@ -1,9 +1,10 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-12T07:09:35.965221Z",
+  "generated_at": "2026-11-12T07:15:21.845Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
+  "collector": "cloudflare-cron",
   "projects": [
     {
       "id": "skill-artifact-check",
@@ -22,8 +23,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-12T07:09:35.965221Z",
-        "observed_at": "2026-11-12T07:09:35.965221Z",
+        "checked_at": "2026-11-12T07:15:21.845Z",
+        "observed_at": "2026-11-12T07:15:21.845Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -35,8 +36,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-12T07:09:35.965221Z",
-        "observed_at": "2026-11-12T07:09:35.965221Z",
+        "checked_at": "2026-11-12T07:15:21.845Z",
+        "observed_at": "2026-11-12T07:15:21.845Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -59,16 +60,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-12T07:09:35.965221Z",
-        "observed_at": "2026-11-12T07:09:35.965221Z",
+        "checked_at": "2026-11-12T07:15:21.845Z",
+        "observed_at": "2026-11-12T07:15:21.845Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-12T07:09:35.965221Z",
-          "observed_at": "2026-11-12T07:09:35.965221Z",
+          "checked_at": "2026-11-12T07:15:21.845Z",
+          "observed_at": "2026-11-12T07:15:21.845Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -182,7 +183,19 @@
       "forks": 0
     },
     {
+      "at": "2026-11-12T07:00:21.670Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
       "at": "2026-11-12T07:09:35.965221Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T07:15:21.845Z",
       "project": "skill-artifact-check",
       "stars": 0,
       "forks": 0
