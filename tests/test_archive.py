@@ -51,6 +51,14 @@ class ArchiveTests(unittest.TestCase):
         with patch.object(c, 'cloud_snapshot', return_value=cloud), patch.object(c, 'api', side_effect=RuntimeError('offline')):
             self.assertGreater(c.collect(self.root, 'mock'), 0)
         self.assertEqual(self.result()['followups'], self.registry['followups'])
+    def test_new_project_not_in_cloud_requires_collection(self):
+        cloud = copy.deepcopy(self.cloud)
+        cloud['projects'] = cloud['projects'][:1]
+        with patch.object(c, 'cloud_snapshot', return_value=cloud), patch.object(c, 'api', side_effect=RuntimeError('offline')):
+            self.assertGreater(c.collect(self.root, 'mock'), 0)
+        self.assertEqual([p['id'] for p in self.result()['projects']], ['first', 'second'])
+        self.assertFalse(self.result()['projects'][1]['metrics']['ok'])
+
     def test_offline_cloud_falls_back_and_keeps_history(self):
         with patch.object(c, 'cloud_snapshot', side_effect=RuntimeError('offline')), patch.object(c, 'api', side_effect=RuntimeError('offline')):
             self.assertGreater(c.collect(self.root, 'mock'), 0)
