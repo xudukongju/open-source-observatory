@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-12T09:05:05.632628Z",
+  "generated_at": "2026-11-12T09:10:22.743798Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
@@ -22,8 +22,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-12T09:05:05.632628Z",
-        "observed_at": "2026-11-12T09:05:05.632628Z",
+        "checked_at": "2026-11-12T09:10:22.743798Z",
+        "observed_at": "2026-11-12T09:10:22.743798Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -35,8 +35,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-12T09:05:05.632628Z",
-        "observed_at": "2026-11-12T09:05:05.632628Z",
+        "checked_at": "2026-11-12T09:10:22.743798Z",
+        "observed_at": "2026-11-12T09:10:22.743798Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -59,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-12T09:05:05.632628Z",
-        "observed_at": "2026-11-12T09:05:05.632628Z",
+        "checked_at": "2026-11-12T09:10:22.743798Z",
+        "observed_at": "2026-11-12T09:10:22.743798Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-12T09:05:05.632628Z",
-          "observed_at": "2026-11-12T09:05:05.632628Z",
+          "checked_at": "2026-11-12T09:10:22.743798Z",
+          "observed_at": "2026-11-12T09:10:22.743798Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -94,8 +94,8 @@
       "discussions": [],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-12T09:05:05.632628Z",
-        "observed_at": "2026-11-12T09:05:05.632628Z",
+        "checked_at": "2026-11-12T09:10:22.743798Z",
+        "observed_at": "2026-11-12T09:10:22.743798Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -107,8 +107,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-12T09:05:05.632628Z",
-        "observed_at": "2026-11-12T09:05:05.632628Z",
+        "checked_at": "2026-11-12T09:10:22.743798Z",
+        "observed_at": "2026-11-12T09:10:22.743798Z",
         "value": [
           {
             "tag": "v0.1.0a1",
@@ -131,8 +131,8 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-12T09:05:05.632628Z",
-        "observed_at": "2026-11-12T09:05:05.632628Z",
+        "checked_at": "2026-11-12T09:10:22.743798Z",
+        "observed_at": "2026-11-12T09:10:22.743798Z",
         "value": [],
         "error": null
       },
@@ -212,7 +212,7 @@
       "id": "calendar-first-feedback",
       "project": "calendar-occurrence-audit",
       "title": "核验首次安装反馈与上游稳定依赖",
-      "status": "pending",
+      "status": "todo",
       "owner": "运营助手",
       "due": "2026-11-13",
       "source": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.1.0a1",
@@ -343,6 +343,18 @@
     },
     {
       "at": "2026-11-12T09:05:05.632628Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T09:10:22.743798Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-12T09:10:22.743798Z",
       "project": "calendar-occurrence-audit",
       "stars": 0,
       "forks": 0
