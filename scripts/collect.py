@@ -137,7 +137,10 @@ def merge_history(*histories):
 def cloud_snapshot(url):
     if url != 'https://xiaosong-observatory-collector.xudukongju.workers.dev/snapshot':
         raise ValueError('Unexpected collector URL')
-    with urllib.request.urlopen(url, timeout=20) as response:
+    request = urllib.request.Request(url, headers={
+        'User-Agent': 'xudukongju-open-source-observatory/1.0 (+https://github.com/xudukongju/open-source-observatory)',
+        'Accept': 'application/json'})
+    with urllib.request.urlopen(request, timeout=20) as response:
         data = json.load(response)
     if (data.get('schema') != 1 or data.get('collector') != 'cloudflare-cron'
             or not all(isinstance(data.get(k), list) for k in ('projects', 'history', 'releases', 'followups'))):

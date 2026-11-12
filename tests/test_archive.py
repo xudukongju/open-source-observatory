@@ -1,6 +1,7 @@
 import copy
 import datetime as dt
 import json
+import io
 import pathlib
 import tempfile
 import unittest
@@ -45,3 +46,11 @@ class ArchiveTests(unittest.TestCase):
         a={'project':'a','at':'2026-11-12','stars':1}
         b={'project':'a','at':'2026-11-13','stars':2}
         self.assertEqual(c.merge_history([a],[a,b]),[a,b])
+
+    def test_public_request_identifies_real_collector_without_auth(self):
+        with patch.object(c.urllib.request, 'urlopen', return_value=io.BytesIO(json.dumps(self.cloud).encode())) as opening:
+            result=c.cloud_snapshot('https://xiaosong-observatory-collector.xudukongju.workers.dev/snapshot')
+        request=opening.call_args[0][0]
+        self.assertIn('xudukongju-open-source-observatory', request.get_header('User-agent'))
+        self.assertIsNone(request.get_header('Authorization'))
+        self.assertEqual(result['generated_at'],self.cloud['generated_at'])
