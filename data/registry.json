@@ -57,12 +57,23 @@
       "id": "calendar-first-feedback",
       "project": "calendar-occurrence-audit",
       "title": "核验首次安装反馈与上游稳定依赖",
-      "status": "todo",
+      "status": "done",
       "owner": "运营助手",
       "due": "2026-11-13",
       "source": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.1.0a1",
-      "note": "发行包已实际下载安装，31项测试通过；后续检查新 Issues 和上游包含 THISANDFUTURE 修复的稳定版本，实际采用未知。",
-      "updated_at": "2026-11-12T09:03:06.008173+00:00"
+      "note": "11月13日回访完成：两产品Issues空，Discussion661无评论；上游PyPI仍3.8.2，保留固定提交。没有待回复反馈，不宣称上游已发行修复。后续每日运营继续检查。",
+      "updated_at": "2026-11-13T01:03:20.302846+00:00"
+    },
+    {
+      "id": "calendar-floating-feedback",
+      "project": "calendar-occurrence-audit",
+      "title": "回访浮动时间审计的安装与使用反馈",
+      "status": "todo",
+      "owner": "运营助手",
+      "due": "2026-11-14",
+      "source": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.2.0a1",
+      "note": "真实下载包已验证；检查用户能否确认两侧时区及处理DST拒绝结果。外部采用未知。",
+      "updated_at": "2026-11-13T01:03:20.302846+00:00"
     }
   ]
 }

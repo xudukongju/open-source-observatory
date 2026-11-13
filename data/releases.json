@@ -44,6 +44,28 @@
       ],
       "external_adoption": null,
       "follow_up": "检查首次安装反馈、固定上游依赖发布状态及真实任务采用；不把作者下载计作用户。"
+    },
+    {
+      "date": "2026-11-13",
+      "project": "calendar-occurrence-audit",
+      "version": "0.2.0a1",
+      "status": "published",
+      "problem": "浮动时间没有固定UTC含义，两侧日历采用不同解释时，原版审计只能拒绝输入",
+      "new_explanation": "缺少TZID不等于UTC，也不同于错误TZID。新增两侧显式时区假设并写入结果，拒绝DST歧义，不改原文件。",
+      "repo": "https://github.com/xudukongju/calendar-occurrence-audit",
+      "release": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.2.0a1",
+      "ci": "https://github.com/xudukongju/calendar-occurrence-audit/actions/runs/43341350372",
+      "evidence": "https://github.com/xudukongju/calendar-occurrence-audit/blob/v0.2.0a1/docs/RESEARCH.md",
+      "acceptance": "44 tests × 6 OS/Python combinations; downloaded wheel independently installed, all 44 tests and new CLI path passed",
+      "promotion": [
+        {
+          "url": "https://github.com/xudukongju/calendar-occurrence-audit/releases/tag/v0.2.0a1",
+          "channel": "GitHub Release · 自有发布说明",
+          "status": "published_verified"
+        }
+      ],
+      "external_adoption": null,
+      "follow_up": "检查浮动时间假设的真实使用反馈，继续跟踪上游稳定版。"
     }
   ]
 }
