@@ -85,6 +85,17 @@
       "source": "https://github.com/agentskills/agentskills/discussions/661#discussioncomment-19604012",
       "note": "三组同输入实验中diff已覆盖全部字节变化；真实packager正确排除缓存，已发布基线选择案例并公开提出具体问题。下一步寻找真实发布任务与可核验尝试；目前仅维护者实验，独立回应/试用均未确认。",
       "updated_at": "2026-11-14T01:14:48.398850+00:00"
+    },
+    {
+      "id": "upstream-skill-links-2283",
+      "project": "skill-artifact-check",
+      "title": "跟进上游安装链接修复的验证与发行",
+      "status": "todo",
+      "owner": "运营助手",
+      "due": "2026-11-18",
+      "source": "https://github.com/vercel-labs/skills/pull/2283#issuecomment-6887051887",
+      "note": "已验证现有PR2283：临时HOME三种布局12次真实CLI调用，修复坏链接且重装保留好链接；PR定向12项测试通过。修复属上游作者，我们贡献恢复路径证据。PR尚未合并，不计本产品发布或外部采用。",
+      "updated_at": "2026-11-15T01:06:39.927480+00:00"
     }
   ]
 }
