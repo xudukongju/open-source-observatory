@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-16T07:19:10.124941Z",
+  "generated_at": "2026-11-16T07:32:11.497959Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
@@ -22,8 +22,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-16T07:19:10.124941Z",
-        "observed_at": "2026-11-16T07:19:10.124941Z",
+        "checked_at": "2026-11-16T07:32:11.497959Z",
+        "observed_at": "2026-11-16T07:32:11.497959Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -35,8 +35,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-16T07:19:10.124941Z",
-        "observed_at": "2026-11-16T07:19:10.124941Z",
+        "checked_at": "2026-11-16T07:32:11.497959Z",
+        "observed_at": "2026-11-16T07:32:11.497959Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -59,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-16T07:19:10.124941Z",
-        "observed_at": "2026-11-16T07:19:10.124941Z",
+        "checked_at": "2026-11-16T07:32:11.497959Z",
+        "observed_at": "2026-11-16T07:32:11.497959Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-16T07:19:10.124941Z",
-          "observed_at": "2026-11-16T07:19:10.124941Z",
+          "checked_at": "2026-11-16T07:32:11.497959Z",
+          "observed_at": "2026-11-16T07:32:11.497959Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -107,8 +107,8 @@
       "discussions": [],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-16T07:19:10.124941Z",
-        "observed_at": "2026-11-16T07:19:10.124941Z",
+        "checked_at": "2026-11-16T07:32:11.497959Z",
+        "observed_at": "2026-11-16T07:32:11.497959Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -120,8 +120,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-16T07:19:10.124941Z",
-        "observed_at": "2026-11-16T07:19:10.124941Z",
+        "checked_at": "2026-11-16T07:32:11.497959Z",
+        "observed_at": "2026-11-16T07:32:11.497959Z",
         "value": [
           {
             "tag": "v0.2.0a1",
@@ -160,8 +160,8 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-16T07:19:10.124941Z",
-        "observed_at": "2026-11-16T07:19:10.124941Z",
+        "checked_at": "2026-11-16T07:32:11.497959Z",
+        "observed_at": "2026-11-16T07:32:11.497959Z",
         "value": [],
         "error": null
       },
@@ -295,13 +295,13 @@
     {
       "id": "upstream-skill-links-2283",
       "project": "skill-artifact-check",
-      "title": "跟进上游安装链接修复的验证与发行",
-      "status": "watching",
-      "owner": "上游维护者（合并）/运营助手（跟进）",
+      "title": "上游安装链接修复已合并",
+      "status": "done",
+      "owner": "上游维护者 / 运营助手",
       "due": "2026-11-18",
       "source": "https://github.com/vercel-labs/skills/pull/2283#issuecomment-6887051887",
-      "note": "已验证现有PR2283：临时HOME三种布局12次真实CLI调用，修复坏链接且重装保留好链接；PR定向12项测试通过。修复属上游作者，我们贡献恢复路径证据。PR尚未合并，不计本产品发布或外部采用。 自主验证和提交均已完成；等待上游维护者决定合并，未将其记成已解决。",
-      "updated_at": "2026-11-16T07:18:58.800595+00:00"
+      "note": "11-16 03:36:57Z（北京时间11:36）已合并，merge commit af860243；我方此前提供独立恢复验证，不冒领修复。已纠正过时的待合并状态。正式npm 1.8.1仍含旧安装逻辑，发行验收单独跟进。",
+      "updated_at": "2026-11-16T07:31:58.062028+00:00"
     },
     {
       "id": "data-skill-empty-package-1298",
@@ -324,6 +324,17 @@
       "source": "https://github.com/xudukongju/skill-artifact-check/blob/ad856be/docs/EMPTY_PACKAGE.md",
       "note": "公开源码ad856be；CI 43822607861六环境成功；实际下载公开源码后全新目录验证控制/空包/恢复三条路径；原问题回复已补入口。案例交付，不计软件新版本或用户采用。",
       "updated_at": "2026-11-16T07:18:58.800595+00:00"
+    },
+    {
+      "id": "upstream-skill-links-release",
+      "project": "skill-artifact-check",
+      "title": "核验正式发行包是否包含已合并的链接修复",
+      "status": "watching",
+      "owner": "上游维护者（发行）/运营助手（验收）",
+      "due": "2026-11-18",
+      "source": "https://github.com/vercel-labs/skills/pull/2283",
+      "note": "选择复用上游修复，不分叉重造。当前npm最新1.8.1，实际tar包的dist/_chunks/remove.mjs仍保留两个旧路径判断。新正式包发布后再做隔离安装/重装验收；不改用户全局安装。",
+      "updated_at": "2026-11-16T07:31:58.062028+00:00"
     }
   ],
   "history": [
@@ -5045,6 +5056,30 @@
     },
     {
       "at": "2026-11-16T07:19:10.124941Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:30:22.153Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:30:22.153Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:32:11.497959Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:32:11.497959Z",
       "project": "calendar-occurrence-audit",
       "stars": 0,
       "forks": 0
