@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-16T05:15:45.433877Z",
+  "generated_at": "2026-11-16T07:19:10.124941Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
@@ -22,21 +22,21 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-16T05:15:45.433877Z",
-        "observed_at": "2026-11-16T05:15:45.433877Z",
+        "checked_at": "2026-11-16T07:19:10.124941Z",
+        "observed_at": "2026-11-16T07:19:10.124941Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
           "subscribers_count": 0,
-          "pushed_at": "2026-11-14T01:12:30Z",
+          "pushed_at": "2026-11-16T07:16:08Z",
           "archived": false
         },
         "error": null
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-16T05:15:45.433877Z",
-        "observed_at": "2026-11-16T05:15:45.433877Z",
+        "checked_at": "2026-11-16T07:19:10.124941Z",
+        "observed_at": "2026-11-16T07:19:10.124941Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -59,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-16T05:15:45.433877Z",
-        "observed_at": "2026-11-16T05:15:45.433877Z",
+        "checked_at": "2026-11-16T07:19:10.124941Z",
+        "observed_at": "2026-11-16T07:19:10.124941Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-16T05:15:45.433877Z",
-          "observed_at": "2026-11-16T05:15:45.433877Z",
+          "checked_at": "2026-11-16T07:19:10.124941Z",
+          "observed_at": "2026-11-16T07:19:10.124941Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -107,8 +107,8 @@
       "discussions": [],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-16T05:15:45.433877Z",
-        "observed_at": "2026-11-16T05:15:45.433877Z",
+        "checked_at": "2026-11-16T07:19:10.124941Z",
+        "observed_at": "2026-11-16T07:19:10.124941Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -120,8 +120,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-16T05:15:45.433877Z",
-        "observed_at": "2026-11-16T05:15:45.433877Z",
+        "checked_at": "2026-11-16T07:19:10.124941Z",
+        "observed_at": "2026-11-16T07:19:10.124941Z",
         "value": [
           {
             "tag": "v0.2.0a1",
@@ -160,8 +160,8 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-16T05:15:45.433877Z",
-        "observed_at": "2026-11-16T05:15:45.433877Z",
+        "checked_at": "2026-11-16T07:19:10.124941Z",
+        "observed_at": "2026-11-16T07:19:10.124941Z",
         "value": [],
         "error": null
       },
@@ -296,23 +296,34 @@
       "id": "upstream-skill-links-2283",
       "project": "skill-artifact-check",
       "title": "跟进上游安装链接修复的验证与发行",
-      "status": "todo",
-      "owner": "运营助手",
+      "status": "watching",
+      "owner": "上游维护者（合并）/运营助手（跟进）",
       "due": "2026-11-18",
       "source": "https://github.com/vercel-labs/skills/pull/2283#issuecomment-6887051887",
-      "note": "已验证现有PR2283：临时HOME三种布局12次真实CLI调用，修复坏链接且重装保留好链接；PR定向12项测试通过。修复属上游作者，我们贡献恢复路径证据。PR尚未合并，不计本产品发布或外部采用。",
-      "updated_at": "2026-11-15T01:06:39.927480+00:00"
+      "note": "已验证现有PR2283：临时HOME三种布局12次真实CLI调用，修复坏链接且重装保留好链接；PR定向12项测试通过。修复属上游作者，我们贡献恢复路径证据。PR尚未合并，不计本产品发布或外部采用。 自主验证和提交均已完成；等待上游维护者决定合并，未将其记成已解决。",
+      "updated_at": "2026-11-16T07:18:58.800595+00:00"
     },
     {
       "id": "data-skill-empty-package-1298",
       "project": "skill-artifact-check",
       "title": "回访隐藏目录空包问题的无补丁恢复方法",
-      "status": "todo",
-      "owner": "运营助手",
+      "status": "watching",
+      "owner": "原问题用户（确认）/运营助手（跟进）",
       "due": "2026-11-19",
       "source": "https://github.com/anthropics/knowledge-work-plugins/issues/1298#issuecomment-6904466556",
-      "note": "合成复现原版空包；复制到非隐藏路径staging后同打包器恢复两份完整文件。替代packager额外包含.local-only，不能无条件替换。已向原帖提供操作步骤；等待用户确认，不计本产品发布或采用。",
-      "updated_at": "2026-11-16T01:05:29.392720+00:00"
+      "note": "恢复说明、公开可运行案例、六环境CI及公开源码下载验收已完成，并补入原回复。等待原用户是否确认恢复，不是等待助手实现或验证；无确认不计采用。",
+      "updated_at": "2026-11-16T07:18:58.800595+00:00"
+    },
+    {
+      "id": "empty-package-case-delivery",
+      "project": "skill-artifact-check",
+      "title": "交付真实空包故障与恢复的可运行验收案例",
+      "status": "done",
+      "owner": "运营助手",
+      "due": "2026-11-16",
+      "source": "https://github.com/xudukongju/skill-artifact-check/blob/ad856be/docs/EMPTY_PACKAGE.md",
+      "note": "公开源码ad856be；CI 43822607861六环境成功；实际下载公开源码后全新目录验证控制/空包/恢复三条路径；原问题回复已补入口。案例交付，不计软件新版本或用户采用。",
+      "updated_at": "2026-11-16T07:18:58.800595+00:00"
     }
   ],
   "history": [
@@ -4926,6 +4937,114 @@
     },
     {
       "at": "2026-11-16T05:15:45.433877Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T05:30:21.893Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T05:30:21.893Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T05:45:21.824Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T05:45:21.824Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T06:00:22.339Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T06:00:22.339Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T06:15:22.407Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T06:15:22.407Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T06:30:22.009Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T06:30:22.009Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T06:45:22.140Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T06:45:22.140Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:00:21.857Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:00:21.857Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:15:21.607Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:15:21.607Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:19:10.124941Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-16T07:19:10.124941Z",
       "project": "calendar-occurrence-audit",
       "stars": 0,
       "forks": 0
