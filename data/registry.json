@@ -129,6 +129,17 @@
       "source": "https://github.com/vercel-labs/skills/pull/2283",
       "note": "选择复用上游修复，不分叉重造。当前npm最新1.8.1，实际tar包的dist/_chunks/remove.mjs仍保留两个旧路径判断。新正式包发布后再做隔离安装/重装验收；不改用户全局安装。",
       "updated_at": "2026-11-16T07:31:58.062028+00:00"
+    },
+    {
+      "id": "airtable-attachment-completion",
+      "project": "跨领域上游贡献",
+      "title": "附件失败仍报备份成功：复现与修复建议已提交",
+      "status": "watching",
+      "owner": "运营助手（跟进）/上游维护者（采用）",
+      "due": "2026-11-20",
+      "source": "https://github.com/mjberli/airtable-backup-script/issues/1",
+      "note": "新发现：真实备份程序在合成附件403时exit0且报成功。窄修复实测exit1、保留部分数据，健康/重新运行正常。原创公开探针已下载验收；不是新产品发行，未确认上游采用；未做在线账户测试。",
+      "updated_at": "2026-11-17T06:10:02.455919+00:00"
     }
   ]
 }
