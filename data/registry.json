@@ -123,12 +123,12 @@
       "id": "upstream-skill-links-release",
       "project": "skill-artifact-check",
       "title": "核验正式发行包是否包含已合并的链接修复",
-      "status": "watching",
+      "status": "done",
       "owner": "上游维护者（发行）/运营助手（验收）",
       "due": "2026-11-18",
       "source": "https://github.com/vercel-labs/skills/pull/2283",
-      "note": "选择复用上游修复，不分叉重造。当前npm最新1.8.1，实际tar包的dist/_chunks/remove.mjs仍保留两个旧路径判断。新正式包发布后再做隔离安装/重装验收；不改用户全局安装。",
-      "updated_at": "2026-11-16T07:31:58.062028+00:00"
+      "note": "11-18实际下载npm1.9.0并安装其声明依赖，在隔离HOME通过12次旧版/发行版安装对照：坏链接被修复、正常重装保持inode。发行验收已完成，不改全局安装。",
+      "updated_at": "2026-11-18T01:06:29.056402+00:00"
     },
     {
       "id": "airtable-attachment-completion",
@@ -140,6 +140,17 @@
       "source": "https://github.com/mjberli/airtable-backup-script/issues/1",
       "note": "新发现：真实备份程序在合成附件403时exit0且报成功。窄修复实测exit1、保留部分数据，健康/重新运行正常。原创公开探针已下载验收；不是新产品发行，未确认上游采用；未做在线账户测试。",
       "updated_at": "2026-11-17T06:10:02.455919+00:00"
+    },
+    {
+      "id": "airtable-output-paths",
+      "project": "跨领域上游贡献",
+      "title": "表格API读取成功但文件导出失败：修复PR已提交",
+      "status": "watching",
+      "owner": "上游维护者（审查）/运营助手（跟进）",
+      "due": "2026-11-21",
+      "source": "https://github.com/simonw/airtable-export/pull/35",
+      "note": "实际CLI复现含斜杠表名写文件失败。修复保留普通名字并区分转义碰撞；19本地与公开源码下载测试通过。含%文件名变化已说明；上游CI等待批准，未合并、不计采用。",
+      "updated_at": "2026-11-18T01:06:29.056402+00:00"
     }
   ]
 }
