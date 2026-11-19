@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-19T01:09:18.884122Z",
+  "generated_at": "2026-11-19T01:17:06.043889Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
@@ -22,8 +22,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-19T01:09:18.884122Z",
-        "observed_at": "2026-11-19T01:09:18.884122Z",
+        "checked_at": "2026-11-19T01:17:06.043889Z",
+        "observed_at": "2026-11-19T01:17:06.043889Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -35,8 +35,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-19T01:09:18.884122Z",
-        "observed_at": "2026-11-19T01:09:18.884122Z",
+        "checked_at": "2026-11-19T01:17:06.043889Z",
+        "observed_at": "2026-11-19T01:17:06.043889Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -59,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-19T01:09:18.884122Z",
-        "observed_at": "2026-11-19T01:09:18.884122Z",
+        "checked_at": "2026-11-19T01:17:06.043889Z",
+        "observed_at": "2026-11-19T01:17:06.043889Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-19T01:09:18.884122Z",
-          "observed_at": "2026-11-19T01:09:18.884122Z",
+          "checked_at": "2026-11-19T01:17:06.043889Z",
+          "observed_at": "2026-11-19T01:17:06.043889Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -107,8 +107,8 @@
       "discussions": [],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-19T01:09:18.884122Z",
-        "observed_at": "2026-11-19T01:09:18.884122Z",
+        "checked_at": "2026-11-19T01:17:06.043889Z",
+        "observed_at": "2026-11-19T01:17:06.043889Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -120,8 +120,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-19T01:09:18.884122Z",
-        "observed_at": "2026-11-19T01:09:18.884122Z",
+        "checked_at": "2026-11-19T01:17:06.043889Z",
+        "observed_at": "2026-11-19T01:17:06.043889Z",
         "value": [
           {
             "tag": "v0.2.0a1",
@@ -160,8 +160,8 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-19T01:09:18.884122Z",
-        "observed_at": "2026-11-19T01:09:18.884122Z",
+        "checked_at": "2026-11-19T01:17:06.043889Z",
+        "observed_at": "2026-11-19T01:17:06.043889Z",
         "value": [],
         "error": null
       },
@@ -357,6 +357,17 @@
       "source": "https://github.com/simonw/airtable-export/pull/35",
       "note": "实际CLI复现含斜杠表名写文件失败。修复保留普通名字并区分转义碰撞；19本地与公开源码下载测试通过。含%文件名变化已说明；上游CI等待批准，未合并、不计采用。",
       "updated_at": "2026-11-18T01:06:29.056402+00:00"
+    },
+    {
+      "id": "csvstat-stream-record-count",
+      "title": "CSV 记录数：空文件归零，大文件避免整表驻留",
+      "status": "watching",
+      "source": "https://github.com/wireservice/csvkit/pull/1389",
+      "owner": "上游维护者（审查）/运营助手（响应）",
+      "project": "跨领域上游贡献",
+      "due": "2026-11-23",
+      "note": "csvstat --count 对空文件原报 -1。改用按 CSV 记录流式计数；同一份 300,000 行合成数据得到相同计数，macOS 子进程峰值 RSS 从 126,844,928 降至 23,740,416 字节。25 项本机与公开源码下载测试通过。仅计数模式；未合并、不计采用或新发行。",
+      "updated_at": "2026-11-19T01:16:54.414967+00:00"
     }
   ],
   "history": [
@@ -8282,6 +8293,30 @@
     },
     {
       "at": "2026-11-19T01:09:18.884122Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-19T01:15:21.777Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-19T01:15:21.777Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-19T01:17:06.043889Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-19T01:17:06.043889Z",
       "project": "calendar-occurrence-audit",
       "stars": 0,
       "forks": 0
