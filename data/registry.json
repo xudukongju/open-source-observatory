@@ -101,12 +101,12 @@
       "id": "data-skill-empty-package-1298",
       "project": "skill-artifact-check",
       "title": "回访隐藏目录空包问题的无补丁恢复方法",
-      "status": "watching",
+      "status": "done",
       "owner": "原问题用户（确认）/运营助手（跟进）",
       "due": "2026-11-19",
-      "source": "https://github.com/anthropics/knowledge-work-plugins/issues/1298#issuecomment-6904466556",
-      "note": "恢复说明、公开可运行案例、六环境CI及公开源码下载验收已完成，并补入原回复。等待原用户是否确认恢复，不是等待助手实现或验证；无确认不计采用。",
-      "updated_at": "2026-11-16T07:18:58.800595+00:00"
+      "source": "https://github.com/anthropics/knowledge-work-plugins/issues/1298#issuecomment-6940580226",
+      "note": "报告人于11月17日在 Windows、Python 3.12.14 独立复验合成样本：原路径生成空包，staging 恢复两个文件，字节匹配，内部隐藏文件仍被排除。不计产品采用。",
+      "updated_at": "2026-11-19T01:08:59.950083+00:00"
     },
     {
       "id": "empty-package-case-delivery",
