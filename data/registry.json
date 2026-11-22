@@ -195,6 +195,17 @@
       "source": "https://gist.github.com/xudukongju/6756fe540eb00dcca4ed2e98254ff9f9",
       "note": "v1.76.0 / 本地 Moto S3：6 MiB 流式旧对象无可用 MD5；copyto --checksum 与普通 check 均 exit0，旧内容未动。check --download 报差异 exit1；定向替换并回读 exit0。公开源码固定修订下载复验通过；不计产品发行或采用。 已把新版本的隔离复现反馈原问题。",
       "updated_at": "2026-11-21T06:07:58.316695+00:00"
+    },
+    {
+      "id": "duckdb-csv-inference-contract",
+      "project": "跨领域研究案例",
+      "title": "DuckDB CSV：锁定交付格式，解析失败保留上次结果",
+      "status": "done",
+      "owner": "xudukongju / 运营助手（案例）",
+      "due": "2026-11-22",
+      "source": "https://gist.github.com/xudukongju/a007d8fca102d66dc69553b1c105acc2",
+      "note": "DuckDB 2.0.1：合法两行数据被推断成零行；增加取样或严格标志仍失败。已知格式关闭推断后完整保留；真正宽行回滚、不覆盖旧数据，修正引号后成功。固定公开修订下载验收；无新发行或采用。 已把当前发行版对照反馈原帖。",
+      "updated_at": "2026-11-22T01:10:33.491697+00:00"
     }
   ]
 }
