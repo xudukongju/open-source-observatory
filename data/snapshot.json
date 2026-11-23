@@ -1,10 +1,9 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-22T23:30:22.012Z",
+  "generated_at": "2026-11-23T01:07:58.885853Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
-  "collector": "cloudflare-cron",
   "projects": [
     {
       "id": "skill-artifact-check",
@@ -23,8 +22,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-22T23:30:22.012Z",
-        "observed_at": "2026-11-22T23:30:22.012Z",
+        "checked_at": "2026-11-23T01:07:58.885853Z",
+        "observed_at": "2026-11-23T01:07:58.885853Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -36,8 +35,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-22T23:30:22.012Z",
-        "observed_at": "2026-11-22T23:30:22.012Z",
+        "checked_at": "2026-11-23T01:07:58.885853Z",
+        "observed_at": "2026-11-23T01:07:58.885853Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -60,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-22T23:30:22.012Z",
-        "observed_at": "2026-11-22T23:30:22.012Z",
+        "checked_at": "2026-11-23T01:07:58.885853Z",
+        "observed_at": "2026-11-23T01:07:58.885853Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-22T23:30:22.012Z",
-          "observed_at": "2026-11-22T23:30:22.012Z",
+          "checked_at": "2026-11-23T01:07:58.885853Z",
+          "observed_at": "2026-11-23T01:07:58.885853Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -108,8 +107,8 @@
       "discussions": [],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-22T23:30:22.012Z",
-        "observed_at": "2026-11-22T23:30:22.012Z",
+        "checked_at": "2026-11-23T01:07:58.885853Z",
+        "observed_at": "2026-11-23T01:07:58.885853Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -121,8 +120,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-22T23:30:22.012Z",
-        "observed_at": "2026-11-22T23:30:22.012Z",
+        "checked_at": "2026-11-23T01:07:58.885853Z",
+        "observed_at": "2026-11-23T01:07:58.885853Z",
         "value": [
           {
             "tag": "v0.2.0a1",
@@ -161,8 +160,8 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-22T23:30:22.012Z",
-        "observed_at": "2026-11-22T23:30:22.012Z",
+        "checked_at": "2026-11-23T01:07:58.885853Z",
+        "observed_at": "2026-11-23T01:07:58.885853Z",
         "value": [],
         "error": null
       },
@@ -366,9 +365,9 @@
       "source": "https://github.com/wireservice/csvkit/pull/1389",
       "owner": "上游维护者（审查）/运营助手（响应）",
       "project": "跨领域上游贡献",
-      "due": "2026-11-23",
-      "note": "csvstat --count 对空文件原报 -1。改用按 CSV 记录流式计数；同一份 300,000 行合成数据得到相同计数，macOS 子进程峰值 RSS 从 126,844,928 降至 23,740,416 字节。25 项本机与公开源码下载测试通过。仅计数模式；未合并、不计采用或新发行。 自有分叉完整CI 44435633763的18项任务通过；11-20上游无审查反馈。",
-      "updated_at": "2026-11-20T01:04:26.797681+00:00"
+      "due": "2026-11-27",
+      "note": "csvstat --count 对空文件原报 -1。改用按 CSV 记录流式计数；同一份 300,000 行合成数据得到相同计数，macOS 子进程峰值 RSS 从 126,844,928 降至 23,740,416 字节。25 项本机与公开源码下载测试通过。仅计数模式；未合并、不计采用或新发行。 自有分叉完整CI 44435633763的18项任务通过；11-20上游无审查反馈。 11-23到期回访仍开放、无评论或审查；不重复催促。",
+      "updated_at": "2026-11-23T01:07:49.228975+00:00"
     },
     {
       "id": "skill-experiment-1120",
@@ -413,6 +412,17 @@
       "source": "https://gist.github.com/xudukongju/a007d8fca102d66dc69553b1c105acc2",
       "note": "DuckDB 2.0.1：合法两行数据被推断成零行；增加取样或严格标志仍失败。已知格式关闭推断后完整保留；真正宽行回滚、不覆盖旧数据，修正引号后成功。固定公开修订下载验收；无新发行或采用。 已把当前发行版对照反馈原帖。",
       "updated_at": "2026-11-22T01:10:33.491697+00:00"
+    },
+    {
+      "id": "csvjson-headerless-stream",
+      "project": "跨领域上游贡献",
+      "title": "csvjson 无表头流式转换：保留首条数据",
+      "status": "watching",
+      "owner": "csvkit 维护者（审查）/ 运营助手（响应）",
+      "due": "2026-11-27",
+      "source": "https://github.com/wireservice/csvkit/pull/1394",
+      "note": "#1392：快速 NDJSON/逐行 GeoJSON 把首条记录误作字段名。复用既有默认字段名工具并回放首条，实际下载29项定向测试通过，CLI验证文件/stdin及EOF前出首条。 分叉完整测试矩阵（仅验证分支移除无凭据的 Codecov 上传）45092512519通过；未合并，不计发行/采用。",
+      "updated_at": "2026-11-23T01:07:49.228975+00:00"
     }
   ],
   "history": [
@@ -12916,6 +12926,90 @@
     },
     {
       "at": "2026-11-22T23:30:22.012Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-22T23:45:21.977Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-22T23:45:21.977Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T00:00:21.997Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T00:00:21.997Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T00:15:21.694Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T00:15:21.694Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T00:30:21.813Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T00:30:21.813Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T00:45:21.761Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T00:45:21.761Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T01:00:21.954Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T01:00:21.954Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T01:07:58.885853Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T01:07:58.885853Z",
       "project": "calendar-occurrence-audit",
       "stars": 0,
       "forks": 0
