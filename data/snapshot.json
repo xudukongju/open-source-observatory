@@ -1,10 +1,9 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-23T14:15:22.297Z",
+  "generated_at": "2026-11-24T01:07:02.137250Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
-  "collector": "cloudflare-cron",
   "projects": [
     {
       "id": "skill-artifact-check",
@@ -23,8 +22,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-23T14:15:22.297Z",
-        "observed_at": "2026-11-23T14:15:22.297Z",
+        "checked_at": "2026-11-24T01:07:02.137250Z",
+        "observed_at": "2026-11-24T01:07:02.137250Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -36,8 +35,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-23T14:15:22.297Z",
-        "observed_at": "2026-11-23T14:15:22.297Z",
+        "checked_at": "2026-11-24T01:07:02.137250Z",
+        "observed_at": "2026-11-24T01:07:02.137250Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -60,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-23T14:15:22.297Z",
-        "observed_at": "2026-11-23T14:15:22.297Z",
+        "checked_at": "2026-11-24T01:07:02.137250Z",
+        "observed_at": "2026-11-24T01:07:02.137250Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-23T14:15:22.297Z",
-          "observed_at": "2026-11-23T14:15:22.297Z",
+          "checked_at": "2026-11-24T01:07:02.137250Z",
+          "observed_at": "2026-11-24T01:07:02.137250Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -108,8 +107,8 @@
       "discussions": [],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-23T14:15:22.297Z",
-        "observed_at": "2026-11-23T14:15:22.297Z",
+        "checked_at": "2026-11-24T01:07:02.137250Z",
+        "observed_at": "2026-11-24T01:07:02.137250Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -121,8 +120,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-23T14:15:22.297Z",
-        "observed_at": "2026-11-23T14:15:22.297Z",
+        "checked_at": "2026-11-24T01:07:02.137250Z",
+        "observed_at": "2026-11-24T01:07:02.137250Z",
         "value": [
           {
             "tag": "v0.2.0a1",
@@ -161,8 +160,8 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-23T14:15:22.297Z",
-        "observed_at": "2026-11-23T14:15:22.297Z",
+        "checked_at": "2026-11-24T01:07:02.137250Z",
+        "observed_at": "2026-11-24T01:07:02.137250Z",
         "value": [],
         "error": null
       },
@@ -424,6 +423,17 @@
       "source": "https://github.com/wireservice/csvkit/pull/1394",
       "note": "#1392：快速 NDJSON/逐行 GeoJSON 把首条记录误作字段名。复用既有默认字段名工具并回放首条，实际下载29项定向测试通过，CLI验证文件/stdin及EOF前出首条。 分叉完整测试矩阵（仅验证分支移除无凭据的 Codecov 上传）45092512519通过；未合并，不计发行/采用。",
       "updated_at": "2026-11-23T01:07:49.228975+00:00"
+    },
+    {
+      "id": "hermes-foreign-db-restore",
+      "project": "跨领域上游贡献",
+      "title": "Hermes 完整 ZIP：区分可归档和可覆盖恢复",
+      "status": "watching",
+      "owner": "上游维护者（方案）/ 运营助手（证据）",
+      "due": "2026-11-27",
+      "source": "https://github.com/NousResearch/hermes-agent/pull/75728#issuecomment-7118767517",
+      "note": "实际用户23次更新未得到完整回滚ZIP。v0.23.3与固定main复现，候选修复自动归档但手动仍漏文件。候选ZIP可导入空目录，新版覆盖已有非SQLite .db时拒绝并保留原文件。隔离的分开备份及恢复已核验、公开下载重跑一致；未发布软件版本。案例：https://gist.github.com/xudukongju/99ad0046a24dbaa486c310fbd6d2aa1e",
+      "updated_at": "2026-11-24T01:06:51.053030+00:00"
     }
   ],
   "history": [
@@ -13647,6 +13657,534 @@
     },
     {
       "at": "2026-11-23T14:15:22.297Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T14:30:21.701Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T14:30:21.701Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T14:45:21.694Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T14:45:21.694Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T15:00:22.278Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T15:00:22.278Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T15:15:21.976Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T15:15:21.976Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T15:30:21.807Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T15:30:21.807Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T15:45:21.918Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T15:45:21.918Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T16:00:21.686Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T16:00:21.686Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T16:15:21.862Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T16:15:21.862Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T16:30:22.139Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T16:30:22.139Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T16:45:21.933Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T16:45:21.933Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T17:00:21.980Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T17:00:21.980Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T17:15:21.707Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T17:15:21.707Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T17:30:22.026Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T17:30:22.026Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T17:45:22.184Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T17:45:22.184Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T18:00:21.968Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T18:00:21.968Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T18:15:21.789Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T18:15:21.789Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T18:30:22.048Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T18:30:22.048Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T18:45:22.093Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T18:45:22.093Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T19:00:22.479Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T19:00:22.479Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T19:15:21.828Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T19:15:21.828Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T19:30:22.183Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T19:30:22.183Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T19:45:22.317Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T19:45:22.317Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T20:00:21.888Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T20:00:21.888Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T20:15:21.688Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T20:15:21.688Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T20:30:21.923Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T20:30:21.923Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T20:45:22.234Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T20:45:22.234Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T21:00:22.008Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T21:00:22.008Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T21:15:22.176Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T21:15:22.176Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T21:30:22.191Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T21:30:22.191Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T21:45:22.022Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T21:45:22.022Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T22:00:22.109Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T22:00:22.109Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T22:15:22.243Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T22:15:22.243Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T22:30:22.275Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T22:30:22.275Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T22:45:21.852Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T22:45:21.852Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T23:00:21.648Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T23:00:21.648Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T23:15:21.900Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T23:15:21.900Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T23:30:21.735Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T23:30:21.735Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T23:45:21.642Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-23T23:45:21.642Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T00:00:21.894Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T00:00:21.894Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T00:15:22.287Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T00:15:22.287Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T00:30:22.361Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T00:30:22.361Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T00:45:22.059Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T00:45:22.059Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T01:00:22.010Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T01:00:22.010Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T01:07:02.137250Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T01:07:02.137250Z",
       "project": "calendar-occurrence-audit",
       "stars": 0,
       "forks": 0
