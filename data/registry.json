@@ -217,6 +217,17 @@
       "source": "https://github.com/wireservice/csvkit/pull/1394",
       "note": "#1392：快速 NDJSON/逐行 GeoJSON 把首条记录误作字段名。复用既有默认字段名工具并回放首条，实际下载29项定向测试通过，CLI验证文件/stdin及EOF前出首条。 分叉完整测试矩阵（仅验证分支移除无凭据的 Codecov 上传）45092512519通过；未合并，不计发行/采用。",
       "updated_at": "2026-11-23T01:07:49.228975+00:00"
+    },
+    {
+      "id": "hermes-foreign-db-restore",
+      "project": "跨领域上游贡献",
+      "title": "Hermes 完整 ZIP：区分可归档和可覆盖恢复",
+      "status": "watching",
+      "owner": "上游维护者（方案）/ 运营助手（证据）",
+      "due": "2026-11-27",
+      "source": "https://github.com/NousResearch/hermes-agent/pull/75728#issuecomment-7118767517",
+      "note": "实际用户23次更新未得到完整回滚ZIP。v0.23.3与固定main复现，候选修复自动归档但手动仍漏文件。候选ZIP可导入空目录，新版覆盖已有非SQLite .db时拒绝并保留原文件。隔离的分开备份及恢复已核验、公开下载重跑一致；未发布软件版本。案例：https://gist.github.com/xudukongju/99ad0046a24dbaa486c310fbd6d2aa1e",
+      "updated_at": "2026-11-24T01:06:51.053030+00:00"
     }
   ]
 }
