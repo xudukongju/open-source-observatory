@@ -1,10 +1,9 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-24T21:30:21.280Z",
+  "generated_at": "2026-11-25T01:14:46.270599Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
-  "collector": "cloudflare-cron",
   "projects": [
     {
       "id": "skill-artifact-check",
@@ -23,8 +22,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-24T21:30:21.280Z",
-        "observed_at": "2026-11-24T21:30:21.280Z",
+        "checked_at": "2026-11-25T01:14:46.270599Z",
+        "observed_at": "2026-11-25T01:14:46.270599Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -36,8 +35,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-24T21:30:21.280Z",
-        "observed_at": "2026-11-24T21:30:21.280Z",
+        "checked_at": "2026-11-25T01:14:46.270599Z",
+        "observed_at": "2026-11-25T01:14:46.270599Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -60,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-24T21:30:21.280Z",
-        "observed_at": "2026-11-24T21:30:21.280Z",
+        "checked_at": "2026-11-25T01:14:46.270599Z",
+        "observed_at": "2026-11-25T01:14:46.270599Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-24T21:30:21.280Z",
-          "observed_at": "2026-11-24T21:30:21.280Z",
+          "checked_at": "2026-11-25T01:14:46.270599Z",
+          "observed_at": "2026-11-25T01:14:46.270599Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -108,8 +107,8 @@
       "discussions": [],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-24T21:30:21.280Z",
-        "observed_at": "2026-11-24T21:30:21.280Z",
+        "checked_at": "2026-11-25T01:14:46.270599Z",
+        "observed_at": "2026-11-25T01:14:46.270599Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -121,8 +120,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-24T21:30:21.280Z",
-        "observed_at": "2026-11-24T21:30:21.280Z",
+        "checked_at": "2026-11-25T01:14:46.270599Z",
+        "observed_at": "2026-11-25T01:14:46.270599Z",
         "value": [
           {
             "tag": "v0.2.0a1",
@@ -161,8 +160,8 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-24T21:30:21.280Z",
-        "observed_at": "2026-11-24T21:30:21.280Z",
+        "checked_at": "2026-11-25T01:14:46.270599Z",
+        "observed_at": "2026-11-25T01:14:46.270599Z",
         "value": [],
         "error": null
       },
@@ -435,6 +434,17 @@
       "source": "https://github.com/NousResearch/hermes-agent/pull/75728#issuecomment-7118767517",
       "note": "实际用户23次更新未得到完整回滚ZIP。v0.23.3与固定main复现，候选修复自动归档但手动仍漏文件。候选ZIP可导入空目录，新版覆盖已有非SQLite .db时拒绝并保留原文件。隔离的分开备份及恢复已核验、公开下载重跑一致；未发布软件版本。案例：https://gist.github.com/xudukongju/99ad0046a24dbaa486c310fbd6d2aa1e",
       "updated_at": "2026-11-24T01:06:51.053030+00:00"
+    },
+    {
+      "id": "ffmpeg-copy-picture-audio-handoff",
+      "project": "跨领域研究案例",
+      "title": "FFmpeg：静音片头与有声素材拼接，不重编码画面",
+      "status": "done",
+      "owner": "xudukongju / 运营助手（案例）",
+      "due": "2026-11-25",
+      "source": "https://gist.github.com/xudukongju/db8b67c0162f5d65d97efc3bc4e56e19",
+      "note": "真实片头流程报告成片无声。在9.1同输入，直接拼接4秒返回0但丢音轨；逐片补AAC后音画接点仍错约27毫秒。分离画面流复制、全程音频一次编码，96帧逐字节一致，声音2.0001秒入场。成熟ffmpeg-skill v4.7.1可重编码恢复；macOS上的既有AAC修复已验证。https://github.com/kajisho5/ffmpeg-skill/issues/659#issuecomment-7149348387",
+      "updated_at": "2026-11-25T01:14:34.774825+00:00"
     }
   ],
   "history": [
@@ -15170,6 +15180,186 @@
     },
     {
       "at": "2026-11-24T21:30:21.280Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T21:45:21.287Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T21:45:21.287Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T22:00:21.464Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T22:00:21.464Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T22:15:21.299Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T22:15:21.299Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T22:30:21.338Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T22:30:21.338Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T22:45:21.418Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T22:45:21.418Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T23:00:21.235Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T23:00:21.235Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T23:15:21.277Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T23:15:21.277Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T23:30:21.343Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T23:30:21.343Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T23:45:21.236Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-24T23:45:21.236Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T00:00:21.307Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T00:00:21.307Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T00:15:21.359Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T00:15:21.359Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T00:30:21.279Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T00:30:21.279Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T00:45:21.233Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T00:45:21.233Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T01:00:21.430Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T01:00:21.430Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T01:14:46.270599Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-25T01:14:46.270599Z",
       "project": "calendar-occurrence-audit",
       "stars": 0,
       "forks": 0
