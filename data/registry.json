@@ -228,6 +228,17 @@
       "source": "https://github.com/NousResearch/hermes-agent/pull/75728#issuecomment-7118767517",
       "note": "实际用户23次更新未得到完整回滚ZIP。v0.23.3与固定main复现，候选修复自动归档但手动仍漏文件。候选ZIP可导入空目录，新版覆盖已有非SQLite .db时拒绝并保留原文件。隔离的分开备份及恢复已核验、公开下载重跑一致；未发布软件版本。案例：https://gist.github.com/xudukongju/99ad0046a24dbaa486c310fbd6d2aa1e",
       "updated_at": "2026-11-24T01:06:51.053030+00:00"
+    },
+    {
+      "id": "ffmpeg-copy-picture-audio-handoff",
+      "project": "跨领域研究案例",
+      "title": "FFmpeg：静音片头与有声素材拼接，不重编码画面",
+      "status": "done",
+      "owner": "xudukongju / 运营助手（案例）",
+      "due": "2026-11-25",
+      "source": "https://gist.github.com/xudukongju/db8b67c0162f5d65d97efc3bc4e56e19",
+      "note": "真实片头流程报告成片无声。在9.1同输入，直接拼接4秒返回0但丢音轨；逐片补AAC后音画接点仍错约27毫秒。分离画面流复制、全程音频一次编码，96帧逐字节一致，声音2.0001秒入场。成熟ffmpeg-skill v4.7.1可重编码恢复；macOS上的既有AAC修复已验证。https://github.com/kajisho5/ffmpeg-skill/issues/659#issuecomment-7149348387",
+      "updated_at": "2026-11-25T01:14:34.774825+00:00"
     }
   ]
 }
