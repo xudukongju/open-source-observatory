@@ -1,10 +1,9 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T15:30:21.366Z",
+  "generated_at": "2026-11-26T17:04:51.296850Z",
   "account": "xudukongju",
   "timezone": "Asia/Shanghai",
   "collection_interval_minutes": 15,
-  "collector": "cloudflare-cron",
   "projects": [
     {
       "id": "skill-artifact-check",
@@ -23,8 +22,8 @@
       ],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-26T15:30:21.366Z",
-        "observed_at": "2026-11-26T15:30:21.366Z",
+        "checked_at": "2026-11-26T17:04:51.296850Z",
+        "observed_at": "2026-11-26T17:04:51.296850Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -36,8 +35,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-26T15:30:21.366Z",
-        "observed_at": "2026-11-26T15:30:21.366Z",
+        "checked_at": "2026-11-26T17:04:51.296850Z",
+        "observed_at": "2026-11-26T17:04:51.296850Z",
         "value": [
           {
             "tag": "v0.1.0",
@@ -60,16 +59,16 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-26T15:30:21.366Z",
-        "observed_at": "2026-11-26T15:30:21.366Z",
+        "checked_at": "2026-11-26T17:04:51.296850Z",
+        "observed_at": "2026-11-26T17:04:51.296850Z",
         "value": [],
         "error": null
       },
       "promotions": [
         {
           "ok": true,
-          "checked_at": "2026-11-26T15:30:21.366Z",
-          "observed_at": "2026-11-26T15:30:21.366Z",
+          "checked_at": "2026-11-26T17:04:51.296850Z",
+          "observed_at": "2026-11-26T17:04:51.296850Z",
           "value": {
             "url": "https://github.com/agentskills/agentskills/discussions/661",
             "title": "Skill Artifact Check: an offline check for stale Skill ZIPs and missing helpers",
@@ -108,8 +107,8 @@
       "discussions": [],
       "metrics": {
         "ok": true,
-        "checked_at": "2026-11-26T15:30:21.366Z",
-        "observed_at": "2026-11-26T15:30:21.366Z",
+        "checked_at": "2026-11-26T17:04:51.296850Z",
+        "observed_at": "2026-11-26T17:04:51.296850Z",
         "value": {
           "stargazers_count": 0,
           "forks_count": 0,
@@ -121,8 +120,8 @@
       },
       "releases": {
         "ok": true,
-        "checked_at": "2026-11-26T15:30:21.366Z",
-        "observed_at": "2026-11-26T15:30:21.366Z",
+        "checked_at": "2026-11-26T17:04:51.296850Z",
+        "observed_at": "2026-11-26T17:04:51.296850Z",
         "value": [
           {
             "tag": "v0.2.0a1",
@@ -161,8 +160,8 @@
       },
       "issues": {
         "ok": true,
-        "checked_at": "2026-11-26T15:30:21.366Z",
-        "observed_at": "2026-11-26T15:30:21.366Z",
+        "checked_at": "2026-11-26T17:04:51.296850Z",
+        "observed_at": "2026-11-26T17:04:51.296850Z",
         "value": [],
         "error": null
       },
@@ -343,10 +342,10 @@
       "title": "附件失败仍报备份成功：复现与修复建议已提交",
       "status": "watching",
       "owner": "运营助手（跟进）/上游维护者（采用）",
-      "due": "2026-11-27",
+      "due": "2026-12-04",
       "source": "https://github.com/mjberli/airtable-backup-script/issues/1",
-      "note": "新发现：真实备份程序在合成附件403时exit0且报成功。窄修复实测exit1、保留部分数据，健康/重新运行正常。原创公开探针已下载验收；不是新产品发行，未确认上游采用；未做在线账户测试。 11-20回访未见回应；不重复催促，仅在维护者回应时接续。",
-      "updated_at": "2026-11-20T01:04:26.797681+00:00"
+      "note": "新发现：真实备份程序在合成附件403时exit0且报成功。窄修复实测exit1、保留部分数据，健康/重新运行正常。原创公开探针已下载验收；不是新产品发行，未确认上游采用；未做在线账户测试。 11-20回访未见回应；不重复催促，仅在维护者回应时接续。 11-27到期读回：仍开放，无新回复；待维护者反馈。",
+      "updated_at": "2026-11-26T17:04:22.178852+00:00"
     },
     {
       "id": "airtable-output-paths",
@@ -354,10 +353,10 @@
       "title": "表格API读取成功但文件导出失败：修复PR已提交",
       "status": "watching",
       "owner": "上游维护者（审查）/运营助手（跟进）",
-      "due": "2026-11-27",
+      "due": "2026-12-04",
       "source": "https://github.com/simonw/airtable-export/pull/35",
-      "note": "实际CLI复现含斜杠表名写文件失败。修复保留普通名字并区分转义碰撞；19本地与公开源码下载测试通过。含%文件名变化已说明；上游CI等待批准，未合并、不计采用。 11-21到期回访：open、无评论或审查；等待上游动作，不重复催促。",
-      "updated_at": "2026-11-21T06:07:58.316695+00:00"
+      "note": "实际CLI复现含斜杠表名写文件失败。修复保留普通名字并区分转义碰撞；19本地与公开源码下载测试通过。含%文件名变化已说明；上游CI等待批准，未合并、不计采用。 11-21到期回访：open、无评论或审查；等待上游动作，不重复催促。 11-27到期读回：PR仍开放，未合并，无新评论或审查。",
+      "updated_at": "2026-11-26T17:04:22.178852+00:00"
     },
     {
       "id": "csvstat-stream-record-count",
@@ -366,20 +365,20 @@
       "source": "https://github.com/wireservice/csvkit/pull/1389",
       "owner": "上游维护者（审查）/运营助手（响应）",
       "project": "跨领域上游贡献",
-      "due": "2026-11-27",
-      "note": "csvstat --count 对空文件原报 -1。改用按 CSV 记录流式计数；同一份 300,000 行合成数据得到相同计数，macOS 子进程峰值 RSS 从 126,844,928 降至 23,740,416 字节。25 项本机与公开源码下载测试通过。仅计数模式；未合并、不计采用或新发行。 自有分叉完整CI 44435633763的18项任务通过；11-20上游无审查反馈。 11-23到期回访仍开放、无评论或审查；不重复催促。",
-      "updated_at": "2026-11-23T01:07:49.228975+00:00"
+      "due": "2026-12-04",
+      "note": "csvstat --count 对空文件原报 -1。改用按 CSV 记录流式计数；同一份 300,000 行合成数据得到相同计数，macOS 子进程峰值 RSS 从 126,844,928 降至 23,740,416 字节。25 项本机与公开源码下载测试通过。仅计数模式；未合并、不计采用或新发行。 自有分叉完整CI 44435633763的18项任务通过；11-20上游无审查反馈。 11-23到期回访仍开放、无评论或审查；不重复催促。 11-27到期读回：PR仍开放，未合并，无新评论或审查。",
+      "updated_at": "2026-11-26T17:04:22.178852+00:00"
     },
     {
       "id": "skill-experiment-1120",
       "project": "skill-artifact-check",
-      "title": "用一次免安装试跑验证 Skill 交付检查是否值得接入",
-      "status": "watching",
-      "owner": "运营助手（准备/跟进）",
+      "title": "Skill 交付核验实验结束，保留已有版本维护",
+      "status": "done",
+      "owner": "运营助手（维护）",
       "due": "2026-11-27",
       "source": "https://github.com/xudukongju/skill-artifact-check/tree/b7657b384e5e99405b479f17911647eaa34db955",
-      "note": "11-20检查：首发讨论只有作者跟进；无独立工具试用或重复使用证据。空包报告人验证的是合成样本的 staging 恢复。已发布中英免安装试跑，公开源码下载验证错误基线、正确包、真实过期三路；11-27按真实净增量决定是否停止独立扩展。",
-      "updated_at": "2026-11-20T01:04:26.797681+00:00"
+      "note": "独立有效回复 0、独立工具试用 0；1 次上游合成样本恢复不计试用。对照未超出现有 diff/ZIP/skil 所测覆盖。保留 v0.1.0 与试跑入口，不主动扩功能。实际存在成熟方案未覆盖的发布流程且有可验证独立试用才重启。",
+      "updated_at": "2026-11-26T17:04:22.178852+00:00"
     },
     {
       "id": "xlsx-long-text-handoff",
@@ -420,10 +419,10 @@
       "title": "csvjson 无表头流式转换：保留首条数据",
       "status": "watching",
       "owner": "csvkit 维护者（审查）/ 运营助手（响应）",
-      "due": "2026-11-27",
+      "due": "2026-12-04",
       "source": "https://github.com/wireservice/csvkit/pull/1394",
-      "note": "#1392：快速 NDJSON/逐行 GeoJSON 把首条记录误作字段名。复用既有默认字段名工具并回放首条，实际下载29项定向测试通过，CLI验证文件/stdin及EOF前出首条。 分叉完整测试矩阵（仅验证分支移除无凭据的 Codecov 上传）45092512519通过；未合并，不计发行/采用。",
-      "updated_at": "2026-11-23T01:07:49.228975+00:00"
+      "note": "#1392：快速 NDJSON/逐行 GeoJSON 把首条记录误作字段名。复用既有默认字段名工具并回放首条，实际下载29项定向测试通过，CLI验证文件/stdin及EOF前出首条。 分叉完整测试矩阵（仅验证分支移除无凭据的 Codecov 上传）45092512519通过；未合并，不计发行/采用。 11-27到期读回：PR仍开放，未合并，无新评论或审查。",
+      "updated_at": "2026-11-26T17:04:22.178852+00:00"
     },
     {
       "id": "hermes-foreign-db-restore",
@@ -431,10 +430,10 @@
       "title": "Hermes 完整 ZIP：区分可归档和可覆盖恢复",
       "status": "watching",
       "owner": "上游维护者（方案）/ 运营助手（证据）",
-      "due": "2026-11-27",
+      "due": "2026-12-04",
       "source": "https://github.com/NousResearch/hermes-agent/pull/75728#issuecomment-7118767517",
-      "note": "实际用户23次更新未得到完整回滚ZIP。v0.23.3与固定main复现，候选修复自动归档但手动仍漏文件。候选ZIP可导入空目录，新版覆盖已有非SQLite .db时拒绝并保留原文件。隔离的分开备份及恢复已核验、公开下载重跑一致；未发布软件版本。案例：https://gist.github.com/xudukongju/99ad0046a24dbaa486c310fbd6d2aa1e",
-      "updated_at": "2026-11-24T01:06:51.053030+00:00"
+      "note": "实际用户23次更新未得到完整回滚ZIP。v0.23.3与固定main复现，候选修复自动归档但手动仍漏文件。候选ZIP可导入空目录，新版覆盖已有非SQLite .db时拒绝并保留原文件。隔离的分开备份及恢复已核验、公开下载重跑一致；未发布软件版本。案例：https://gist.github.com/xudukongju/99ad0046a24dbaa486c310fbd6d2aa1e 11-27到期读回：PR仍开放，未合并，无新审查。",
+      "updated_at": "2026-11-26T17:04:22.178852+00:00"
     },
     {
       "id": "ffmpeg-copy-picture-audio-handoff",
@@ -444,8 +443,19 @@
       "owner": "xudukongju / 运营助手（案例）",
       "due": "2026-11-25",
       "source": "https://gist.github.com/xudukongju/db8b67c0162f5d65d97efc3bc4e56e19",
-      "note": "真实片头流程报告成片无声。在9.1同输入，直接拼接4秒返回0但丢音轨；逐片补AAC后音画接点仍错约27毫秒。分离画面流复制、全程音频一次编码，96帧逐字节一致，声音2.0001秒入场。成熟ffmpeg-skill v4.7.1可重编码恢复；macOS上的既有AAC修复已验证。https://github.com/kajisho5/ffmpeg-skill/issues/659#issuecomment-7149348387",
-      "updated_at": "2026-11-25T01:14:34.774825+00:00"
+      "note": "真实片头流程报告成片无声。在9.1同输入，直接拼接4秒返回0但丢音轨；逐片补AAC后音画接点仍错约27毫秒。分离画面流复制、全程音频一次编码，96帧逐字节一致，声音2.0001秒入场。成熟ffmpeg-skill v4.7.1可重编码恢复；macOS上的既有AAC修复已验证。https://github.com/kajisho5/ffmpeg-skill/issues/659#issuecomment-7149348387 11-26 维护者认可 macOS 与静音前段接合验证，Windows 剩余两项由其自行复验；非采用。 https://github.com/kajisho5/ffmpeg-skill/issues/659#issuecomment-7187284655",
+      "updated_at": "2026-11-26T17:04:22.178852+00:00"
+    },
+    {
+      "id": "restic-qualified-recovery",
+      "project": "跨领域研究案例",
+      "title": "Restic：只将已验证快照纳入恢复与保留策略",
+      "status": "done",
+      "owner": "xudukongju / 运营助手（案例）",
+      "due": "2026-11-27",
+      "source": "https://gist.github.com/xudukongju/eb3c517b452ddef7bc585c05063d844d/d4d145bbcf8f715047f808bf4cd9e3a99ff6442e",
+      "updated_at": "2026-11-26T17:04:22.178852+00:00",
+      "note": "0.20.0 空目录备份、全数据 check 皆退出0；未筛选的 dry-run 只留空快照，真实恢复0文件。原生按ID验证并筛标签后恢复2文件、来源返回后更新恢复点。固定公开下载重跑通过；未执行删除或发新软件版本。"
     }
   ],
   "history": [
@@ -17209,6 +17219,90 @@
     },
     {
       "at": "2026-11-26T15:30:21.366Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T15:45:21.291Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T15:45:21.291Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T16:00:21.220Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T16:00:21.220Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T16:15:21.297Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T16:15:21.297Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T16:30:21.254Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T16:30:21.254Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T16:45:21.319Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T16:45:21.319Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T17:00:21.236Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T17:00:21.236Z",
+      "project": "calendar-occurrence-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T17:04:51.296850Z",
+      "project": "skill-artifact-check",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "at": "2026-11-26T17:04:51.296850Z",
       "project": "calendar-occurrence-audit",
       "stars": 0,
       "forks": 0
